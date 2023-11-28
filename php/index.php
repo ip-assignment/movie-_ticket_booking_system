@@ -23,8 +23,8 @@
                 <input type="password" name="password" placeholder="Password" required>
             </div>
             <div class="buttonContainer">
-                <input type="submit" value="LogIn">
-                <input type="reset" value="Cancel">
+                <button type="submit">LogIn</button>
+                <button type="reset">Cancel</button>
                 <a href="signUp.php">Sign up</a>
             </div>
         </form>
