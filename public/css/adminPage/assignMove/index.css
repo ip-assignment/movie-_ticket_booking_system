@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;1,400&display=swap');
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.bodyCon{
+    display: flex;
+    flex-direction: row;
+}
+
+header{
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(241, 241, 241);
+}
+
+header h2{
+    margin-left: 5px;
+    font-family: 'Nunito', sans-serif;
+    flex-grow: 20;
+}
+
+header a{
+    font-family: 'Nunito', sans-serif;
+    font-size: large;
+    flex-grow: 1;
+    text-decoration: none;
+    color: black;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    width: 34%;
+    height: 100%;
+}
+
+nav
+div{
+    display: flex;
+    align-items: center;
+   
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+    height: 25px;
+}
+
+nav 
+a{
+    margin-left: 10px;
+    text-decoration: none;
+    color:  #026cfc;
+    font-family: 'Nunito', sans-serif;
+}
+
+nav
+.selected{
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: #026cfc;
+    
+}
+
+nav
+.selected a{
+    color: white;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+}
+
+main
+.toggle{
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    height: 55px;
+    font-family: 'Nunito', sans-serif;
+}
+
+main
+.toggle
+div{
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    border-radius: 5px;
+}
+
+main
+.toggle
+div:hover{
+    cursor: pointer;
+}
+
+main 
+.inputCon{
+    display: flex;
+    flex-direction: row;
+}
+
+main 
+form{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-size: medium;
+    font-weight:300;
+    color: black;
+}
+
+main 
+div{
+    display: flex;
+    flex-direction: column;
+}
+
+main 
+input, 
+select{
+    padding-left: 10px;
+    border-style: none;
+    width: 250px;
+    height: 30px;
+    margin: 5px;
+    /* border-radius: 5px; */
+    border: 1px solid black;
+    border-radius: 5px;
+    border-color: rgb(216, 216, 216);
+    border-width: 0.5px;
+    font-family: 'Nunito', sans-serif;
+    font-size: medium;
+    inset:0px;
+}
+
+main
+form
+select{
+    width: 255px;
+    height: 35px;
+}
+
+main 
+button{
+    height: 40px;
+    width: 75px; 
+    font-family: 'Nunito', sans-serif;
+    font-size: medium;
+    color: white;
+}
+
+main
+button:hover{
+    cursor: pointer;
+}
+
+main
+button[type='submit']{
+    border-radius: 5px;
+    border: 0px;
+    background-color: #026cfc;
+}
+
+main
+button[type='reset']{
+    border-radius: 5px;
+    border: 0px;
+    background-color: #f52424;
+}
+.toggleSelected{
+    color: #026cfc;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.areaSelected{
+    display: none;
+}
+table{
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+table .header{
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: medium;
+    border-top: 1px solid rgb(216, 216, 216);
+}
+td{
+    font-family: 'Nunito', sans-serif;
+    height: 50px;
+    width: 100px;
+    border-top: 1px solid rgb(216, 216, 216);
+}
+
+tr:nth-of-type(n+2){
+    :nth-child(5){
+        color: red;
+    }
+    :nth-child(5):hover{
+        cursor: pointer;
+    }
+}
+tr:nth-of-type(2n + 2){
+    background-color: rgb(228, 228, 228);
+}
+td:nth-child(1){
+    font-weight: bold;
+}
