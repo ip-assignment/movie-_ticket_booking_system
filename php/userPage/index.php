@@ -1,19 +1,298 @@
-<?php 
-session_start();
-include "../../config/config.php";
-if(!isset($_SESSION['id'])){
-    header("Location:http://localhost/refIP2/php/", true);
-    exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/userPage/home/index.css?v=<?php echo time(); ?>">
     <title>Home page</title>
 </head>
 <body>
-   <a href="../logout.php">logout</a>
+    <div class="container">
+        <div class="menu" id="menu">
+            <div class="menuCon">
+                <div>
+                    <img src="../../public/img/exit.svg?v=<?echo time()?>" id="exit" alt="">
+                </div>
+                <div>
+                    <h2>ALEM CINEMA</h2>
+                    <hr>
+                    <a href="#"><p>Home</p></a>
+                    <hr>
+                    <a href="#"><p>About</p></a>
+                    <hr>
+                    <a href="#"><p>News Magazine</p></a>
+                    <hr>
+                    <a href="#"><p>Contact</p></a>
+                    <hr>
+                    <small>CONNECT WITH US</small>
+                    <div>
+                        <a href="#"><img src="../../public/img/menu/instagram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                        <a href="#"><img src="../../public/img/menu/telegram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                        <a href="#"><img src="../../public/img/menu/twitter.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                        <a href="#"><img src="../../public/img/menu/whatsapp.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                        <a href="#"><img src="../../public/img/menu/facebook.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div>
+                <a href="http://localhost/movie/php/userPage/">
+                    <img src="../../public/img/download-removebg-preview.png" alt="error" height="150">
+                </a>
+                <div class="searchCon">
+                    <form action="" method="post">
+                        <input type="text" placeholder="search">
+                        <button>Search</button>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <div><p>menu</p></div>
+                <div><a href="#"><img src="../../public/img/menu-burger.svg?v=<?php echo time()?>" alt="" srcset="" width="30" id="menuToggle"></a></div>
+            </div>
+        </header>
+        <main>
+            <div class="contentContainer">
+                
+                <div class="movies">
+                    <div class="movieContainer">
+                        <div class="imgContainer">
+                            <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
+                        </div>
+                        <div class="description">
+                            <div><b>Name:&nbsp;</b><p>data</p></div>
+                            <div><b>Duration:&nbsp;</b><p>data</p></div>
+                            <div><b>Genre:&nbsp;</b><p>data</p></div>
+                            <div><b>Writer:&nbsp;</b><p>data</p></div>
+                            <div><b>Producer:&nbsp;</b><p>data</p></div>
+                            <div><b>Actors:&nbsp;</b></div>
+                            <ul>
+                                <li>Name</li>
+                                <li>Name</li>
+                                <li>Name</li>
+                                <li>Name</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="button">
+                            <p>Book ticket</p>
+                        </a>
+                    </div>
+                    <div class="movieContainer">
+                        <div class="imgContainer">
+                            <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
+                        </div>
+                        <div class="description">
+                            <div><b>Name:&nbsp;</b><p>data</p></div>
+                            <div><b>Duration:&nbsp;</b><p>data</p></div>
+                            <div><b>Genre:&nbsp;</b><p>data</p></div>
+                            <div><b>Writer:&nbsp;</b><p>data</p></div>
+                            <div><b>Producer:&nbsp;</b><p>data</p></div>
+                            <div><b>Actors:&nbsp;</b></div>
+                            <ul>
+                                <li>Name</li>
+                                <li>Name</li>
+                                <li>Name</li>
+                                <li>Name</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="button">
+                            <p>Book ticket</p>
+                        </a>
+                    </div>
+                    <div class="movieContainer">
+                        <div class="imgContainer">
+                            <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
+                        </div>
+                        <div class="description">
+                            <div><b>Name:&nbsp;</b><p>data</p></div>
+                            <div><b>Duration:&nbsp;</b><p>data</p></div>
+                            <div><b>Genre:&nbsp;</b><p>data</p></div>
+                            <div><b>Writer:&nbsp;</b><p>data</p></div>
+                            <div><b>Producer:&nbsp;</b><p>data</p></div>
+                            <div><b>Actors:&nbsp;</b></div>
+                            <ul>
+                                <li>Name</li>
+                                <li>Name</li>
+                                <li>Name</li>
+                                <li>Name</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="button">
+                            <p>Book ticket</p>
+                        </a>
+                    </div>
+                    <div class="movieContainer">
+                        <div class="imgContainer">
+                            <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
+                        </div>
+                        <div class="description">
+                            <div><b>Name:&nbsp;</b><p>data</p></div>
+                            <div><b>Duration:&nbsp;</b><p>data</p></div>
+                            <div><b>Genre:&nbsp;</b><p>data</p></div>
+                            <div><b>Writer:&nbsp;</b><p>data</p></div>
+                            <div><b>Producer:&nbsp;</b><p>data</p></div>
+                            <div><b>Actors:&nbsp;</b></div>
+                            <ul>
+                                <li>Name</li>
+                                <li>Name</li>
+                                <li>Name</li>
+                                <li>Name</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="button">
+                            <p>Book ticket</p>
+                        </a>
+                    </div>
+                    <div class="movieContainer">
+                        <div class="imgContainer">
+                            <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
+                        </div>
+                        <div class="description">
+                            <div><b>Name:&nbsp;</b><p>data</p></div>
+                            <div><b>Duration:&nbsp;</b><p>data</p></div>
+                            <div><b>Genre:&nbsp;</b><p>data</p></div>
+                            <div><b>Writer:&nbsp;</b><p>data</p></div>
+                            <div><b>Producer:&nbsp;</b><p>data</p></div>
+                            <div><b>Actors:&nbsp;</b></div>
+                            <ul>
+                                <li>Name</li>
+                                <li>Name</li>
+                                <li>Name</li>
+                                <li>Name</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="button">
+                            <p>Book ticket</p>
+                        </a>
+                    </div>
+                    <div class="movieContainer">
+                        <div class="imgContainer">
+                            <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
+                        </div>
+                        <div class="description">
+                            <div><b>Name:&nbsp;</b><p>data</p></div>
+                            <div><b>Duration:&nbsp;</b><p>data</p></div>
+                            <div><b>Genre:&nbsp;</b><p>data</p></div>
+                            <div><b>Writer:&nbsp;</b><p>data</p></div>
+                            <div><b>Producer:&nbsp;</b><p>data</p></div>
+                            <div><b>Actors:&nbsp;</b></div>
+                            <ul>
+                                <li>Name</li>
+                                <li>Name</li>
+                                <li>Name</li>
+                                <li>Name</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="button">
+                            <p>Book ticket</p>
+                        </a>
+                    </div>
+                    <div class="movieContainer">
+                        <div class="imgContainer">
+                            <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
+                        </div>
+                        <div class="description">
+                            <div><b>Name:&nbsp;</b><p>data</p></div>
+                            <div><b>Duration:&nbsp;</b><p>data</p></div>
+                            <div><b>Genre:&nbsp;</b><p>data</p></div>
+                            <div><b>Writer:&nbsp;</b><p>data</p></div>
+                            <div><b>Producer:&nbsp;</b><p>data</p></div>
+                            <div><b>Actors:&nbsp;</b></div>
+                            <ul>
+                                <li>Name</li>
+                                <li>Name</li>
+                                <li>Name</li>
+                                <li>Name</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="button">
+                            <p>Book ticket</p>
+                        </a>
+                    </div>
+                    <div class="movieContainer">
+                        <div class="imgContainer">
+                            <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
+                        </div>
+                        <div class="description">
+                            <div><b>Name:&nbsp;</b><p>data</p></div>
+                            <div><b>Duration:&nbsp;</b><p>data</p></div>
+                            <div><b>Genre:&nbsp;</b><p>data</p></div>
+                            <div><b>Writer:&nbsp;</b><p>data</p></div>
+                            <div><b>Producer:&nbsp;</b><p>data</p></div>
+                            <div><b>Actors:&nbsp;</b></div>
+                            <ul>
+                                <li>Name</li>
+                                <li>Name</li>
+                                <li>Name</li>
+                                <li>Name</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="button">
+                            <p>Book ticket</p>
+                        </a>
+                    </div>
+                    <div class="movieContainer">
+                        <div class="imgContainer">
+                            <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
+                        </div>
+                        <div class="description">
+                            <div><b>Name:&nbsp;</b><p>data</p></div>
+                            <div><b>Duration:&nbsp;</b><p>data</p></div>
+                            <div><b>Genre:&nbsp;</b><p>data</p></div>
+                            <div><b>Writer:&nbsp;</b><p>data</p></div>
+                            <div><b>Producer:&nbsp;</b><p>data</p></div>
+                            <div><b>Actors:&nbsp;</b></div>
+                            <ul>
+                                <li>Name</li>
+                                <li>Name</li>
+                                <li>Name</li>
+                                <li>Name</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="button">
+                            <p>Book ticket</p>
+                        </a>
+                    </div>
+                    <div class="movieContainer">
+                        <div class="imgContainer">
+                            <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
+                        </div>
+                        <div class="description">
+                            <div><b>Name:&nbsp;</b><p>data</p></div>
+                            <div><b>Duration:&nbsp;</b><p>data</p></div>
+                            <div><b>Genre:&nbsp;</b><p>data</p></div>
+                            <div><b>Writer:&nbsp;</b><p>data</p></div>
+                            <div><b>Producer:&nbsp;</b><p>data</p></div>
+                            <div><b>Actors:&nbsp;</b></div>
+                            <ul>
+                                <li>Name</li>
+                                <li>Name</li>
+                                <li>Name</li>
+                                <li>Name</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="button">
+                            <p>Book ticket</p>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div>
+                som
+            </div>
+            <div>
+                <a href="#"><img src="../../public/img/instagram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                <a href="#"><img src="../../public/img/telegram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                <a href="#"><img src="../../public/img/twitter.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                <a href="#"><img src="../../public/img/whatsapp.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                <a href="#"><img src="../../public/img/facebook.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+            </div>
+        </footer>
+    </div>
 </body>
+<script src="../../public/js/usersPage/home/index.js"></script>
 </html>
