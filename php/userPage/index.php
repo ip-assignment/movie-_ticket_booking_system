@@ -47,9 +47,9 @@
                     </form>
                 </div>
             </div>
-            <div>
+            <div id="menuToggle">
                 <div><p>menu</p></div>
-                <div><a href="#"><img src="../../public/img/menu-burger.svg?v=<?php echo time()?>" alt="" srcset="" width="30" id="menuToggle"></a></div>
+                <div><a href="#"><img src="../../public/img/menu-burger.svg?v=<?php echo time()?>" alt="" srcset="" width="30"></a></div>
             </div>
         </header>
         <main>
@@ -281,16 +281,13 @@
             </div>
         </main>
         <footer>
-            <div>
-                som
-            </div>
-            <div>
-                <a href="#"><img src="../../public/img/instagram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
-                <a href="#"><img src="../../public/img/telegram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
-                <a href="#"><img src="../../public/img/twitter.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
-                <a href="#"><img src="../../public/img/whatsapp.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
-                <a href="#"><img src="../../public/img/facebook.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
-            </div>
+            
+            <a href="#"><img src="../../public/img/instagram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+            <a href="#"><img src="../../public/img/telegram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+            <a href="#"><img src="../../public/img/twitter.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+            <a href="#"><img src="../../public/img/whatsapp.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+            <a href="#"><img src="../../public/img/facebook.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+            
         </footer>
     </div>
 </body>
