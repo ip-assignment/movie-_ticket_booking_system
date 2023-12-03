@@ -165,6 +165,8 @@ body {
   select {
     padding: 8px;
     margin-right: 10px;
+    border: 2px solid #474343; 
+    border-radius: 5px;
     
   }
   
