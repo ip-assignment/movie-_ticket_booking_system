@@ -1,0 +1,217 @@
+body {
+  font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafbfc;
+    background: url(ticket.jpg) center center fixed;
+    background-size: cover;
+   
+  }
+
+  header {
+    color: #fff;
+    text-align: right;
+    position: relative;
+    overflow: hidden;
+    background-color: #333333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #menuBtn,
+  #closeBtn {
+    display: none;
+  }
+
+  .menu-button,
+  .close-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 20px;
+    display: inline-block;
+  }
+
+  .menu-container {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #444141;
+    transition: right 0.5s;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+  }
+
+  .menu-content {
+    padding: 1em;
+  }
+
+  .menu-content a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s;
+  }
+  .menu-content a:not(:last-child) {
+    border-bottom: 1px solid #fff; /* Added line between navigation pages */
+  }
+
+  .menu-content a:hover {
+    background-color: #555;
+  }
+
+  .alem-cinema {
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .social-icons a {
+    margin-right: 10px;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+  .movie-section {
+    display: flex;
+    margin: 20px;
+  }
+
+  .movie-details {
+    flex: 1;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #745e5e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row; /* Updated to row */
+    position: relative;
+   
+  
+  }
+
+  .main-image {
+    width: 30%; /* Adjust the size as needed */
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+    transition: transform 0.3s ease-in-out; /* Added margin-right */
+  }
+  
+ 
+  
+  .main-image:hover  {
+    transform: scale(1.1);
+  }
+  
+  .side-content {
+    flex: 1;
+    padding: 10px; /* Adjusted padding */
+  }
+  h2 {
+    font-size: medium;
+  }
+
+  p {
+    font-size: small;
+  }
+
+  .second-image {
+    width: 20%; /* Adjust the size as needed */
+    height: auto;
+    border-radius: 8px;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    right: 10px;
+  }
+  
+  .buy-ticket-btn:hover {
+    background-color: #555;
+  }
+
+  .trailer-link {
+    margin-top: 10px;
+    color: #333;
+    text-decoration: none;
+    position: absolute;
+    top: 80%;
+    transform: translateY(-50%);
+    right: 110px;
+  }
+
+  .seat-selection {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  select {
+    padding: 8px;
+    margin-right: 10px;
+    
+  }
+  
+
+
+  .buy-ticket-btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contact-section {
+    flex: 1;
+    text-align: left;
+  }
+
+  .logo-section {
+    text-align: center;
+    width: 20%;
+  }
+
+  .social-section {
+    flex: 1;
+    text-align: right;
+    padding-right: 80px;
+
+  }
+
+  .logo {
+    width: 60px; /* Adjust the size as needed */
+    height: auto;
+    margin-left: 20px; /* Adjust the margin as needed */
+  }
