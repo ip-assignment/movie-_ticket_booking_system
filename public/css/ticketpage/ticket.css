@@ -1,5 +1,5 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #fafbfc;
@@ -62,7 +62,7 @@ body {
     transition: background-color 0.3s;
   }
   .menu-content a:not(:last-child) {
-    border-bottom: 1px solid #fff; /* Added line between navigation pages */
+    border-bottom: 1px solid #fff; 
   }
 
   .menu-content a:hover {
@@ -101,18 +101,17 @@ body {
     background-color: #745e5e;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: row; /* Updated to row */
+    flex-direction: row; 
     position: relative;
    
   
   }
 
   .main-image {
-    width: 30%; /* Adjust the size as needed */
-    height: auto;
+    width: 30%; 
     border-radius: 8px;
     margin-right: 20px;
-    transition: transform 0.3s ease-in-out; /* Added margin-right */
+    transition: transform 0.3s ease-in-out; 
   }
   
  
@@ -123,7 +122,7 @@ body {
   
   .side-content {
     flex: 1;
-    padding: 10px; /* Adjusted padding */
+    padding: 10px; 
   }
   h2 {
     font-size: medium;
@@ -134,7 +133,7 @@ body {
   }
 
   .second-image {
-    width: 20%; /* Adjust the size as needed */
+    width: 20%; 
     height: auto;
     border-radius: 8px;
     position: absolute;
@@ -211,7 +210,7 @@ body {
   }
 
   .logo {
-    width: 60px; /* Adjust the size as needed */
+    width: 60px; 
     height: auto;
-    margin-left: 20px; /* Adjust the margin as needed */
+    margin-left: 20px; 
   }
