@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../public/css/userPage/home/index.css?v=<?php echo time(); ?>">
     <title>Home page</title>
 </head>
+
 <body>
     <div class="container">
         <div class="menu" id="menu">
             <div class="menuCon">
                 <div>
-                    <img src="../../public/img/exit.svg?v=<?echo time()?>" id="exit" alt="">
+                    <img src="../../public/img/exit.svg?v=<? echo time() ?>" id="exit" alt="">
                 </div>
                 <div>
                     <h2>ALEM CINEMA</h2>
                     <hr>
-                    <a href="#"><p>Home</p></a>
+                    <a href="#">
+                        <p>Home</p>
+                    </a>
                     <hr>
-                    <a href="#"><p>About</p></a>
+                    <a href="#">
+                        <p>About</p>
+                    </a>
                     <hr>
-                    <a href="#"><p>News Magazine</p></a>
+                    <a href="#">
+                        <p>News Magazine</p>
+                    </a>
                     <hr>
-                    <a href="#"><p>Contact</p></a>
+                    <a href="#">
+                        <p>Contact</p>
+                    </a>
                     <hr>
                     <small>CONNECT WITH US</small>
                     <div>
@@ -48,24 +58,36 @@
                 </div>
             </div>
             <div id="menuToggle">
-                <div><p>menu</p></div>
-                <div><a href="#"><img src="../../public/img/menu-burger.svg?v=<?php echo time()?>" alt="" srcset="" width="30"></a></div>
+                <div>
+                    <p>menu</p>
+                </div>
+                <div><a href="#"><img src="../../public/img/menu-burger.svg?v=<?php echo time() ?>" alt="" srcset="" width="30"></a></div>
             </div>
         </header>
         <main>
             <div class="contentContainer">
-                
+
                 <div class="movies">
                     <div class="movieContainer">
                         <div class="imgContainer">
                             <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
                         </div>
                         <div class="description">
-                            <div><b>Name:&nbsp;</b><p>data</p></div>
-                            <div><b>Duration:&nbsp;</b><p>data</p></div>
-                            <div><b>Genre:&nbsp;</b><p>data</p></div>
-                            <div><b>Writer:&nbsp;</b><p>data</p></div>
-                            <div><b>Producer:&nbsp;</b><p>data</p></div>
+                            <div><b>Name:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Duration:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Genre:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Writer:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Producer:&nbsp;</b>
+                                <p>data</p>
+                            </div>
                             <div><b>Actors:&nbsp;</b></div>
                             <ul>
                                 <li>Name</li>
@@ -83,11 +105,21 @@
                             <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
                         </div>
                         <div class="description">
-                            <div><b>Name:&nbsp;</b><p>data</p></div>
-                            <div><b>Duration:&nbsp;</b><p>data</p></div>
-                            <div><b>Genre:&nbsp;</b><p>data</p></div>
-                            <div><b>Writer:&nbsp;</b><p>data</p></div>
-                            <div><b>Producer:&nbsp;</b><p>data</p></div>
+                            <div><b>Name:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Duration:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Genre:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Writer:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Producer:&nbsp;</b>
+                                <p>data</p>
+                            </div>
                             <div><b>Actors:&nbsp;</b></div>
                             <ul>
                                 <li>Name</li>
@@ -105,11 +137,21 @@
                             <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
                         </div>
                         <div class="description">
-                            <div><b>Name:&nbsp;</b><p>data</p></div>
-                            <div><b>Duration:&nbsp;</b><p>data</p></div>
-                            <div><b>Genre:&nbsp;</b><p>data</p></div>
-                            <div><b>Writer:&nbsp;</b><p>data</p></div>
-                            <div><b>Producer:&nbsp;</b><p>data</p></div>
+                            <div><b>Name:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Duration:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Genre:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Writer:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Producer:&nbsp;</b>
+                                <p>data</p>
+                            </div>
                             <div><b>Actors:&nbsp;</b></div>
                             <ul>
                                 <li>Name</li>
@@ -127,11 +169,21 @@
                             <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
                         </div>
                         <div class="description">
-                            <div><b>Name:&nbsp;</b><p>data</p></div>
-                            <div><b>Duration:&nbsp;</b><p>data</p></div>
-                            <div><b>Genre:&nbsp;</b><p>data</p></div>
-                            <div><b>Writer:&nbsp;</b><p>data</p></div>
-                            <div><b>Producer:&nbsp;</b><p>data</p></div>
+                            <div><b>Name:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Duration:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Genre:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Writer:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Producer:&nbsp;</b>
+                                <p>data</p>
+                            </div>
                             <div><b>Actors:&nbsp;</b></div>
                             <ul>
                                 <li>Name</li>
@@ -149,11 +201,21 @@
                             <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
                         </div>
                         <div class="description">
-                            <div><b>Name:&nbsp;</b><p>data</p></div>
-                            <div><b>Duration:&nbsp;</b><p>data</p></div>
-                            <div><b>Genre:&nbsp;</b><p>data</p></div>
-                            <div><b>Writer:&nbsp;</b><p>data</p></div>
-                            <div><b>Producer:&nbsp;</b><p>data</p></div>
+                            <div><b>Name:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Duration:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Genre:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Writer:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Producer:&nbsp;</b>
+                                <p>data</p>
+                            </div>
                             <div><b>Actors:&nbsp;</b></div>
                             <ul>
                                 <li>Name</li>
@@ -171,11 +233,21 @@
                             <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
                         </div>
                         <div class="description">
-                            <div><b>Name:&nbsp;</b><p>data</p></div>
-                            <div><b>Duration:&nbsp;</b><p>data</p></div>
-                            <div><b>Genre:&nbsp;</b><p>data</p></div>
-                            <div><b>Writer:&nbsp;</b><p>data</p></div>
-                            <div><b>Producer:&nbsp;</b><p>data</p></div>
+                            <div><b>Name:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Duration:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Genre:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Writer:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Producer:&nbsp;</b>
+                                <p>data</p>
+                            </div>
                             <div><b>Actors:&nbsp;</b></div>
                             <ul>
                                 <li>Name</li>
@@ -193,11 +265,21 @@
                             <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
                         </div>
                         <div class="description">
-                            <div><b>Name:&nbsp;</b><p>data</p></div>
-                            <div><b>Duration:&nbsp;</b><p>data</p></div>
-                            <div><b>Genre:&nbsp;</b><p>data</p></div>
-                            <div><b>Writer:&nbsp;</b><p>data</p></div>
-                            <div><b>Producer:&nbsp;</b><p>data</p></div>
+                            <div><b>Name:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Duration:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Genre:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Writer:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Producer:&nbsp;</b>
+                                <p>data</p>
+                            </div>
                             <div><b>Actors:&nbsp;</b></div>
                             <ul>
                                 <li>Name</li>
@@ -215,11 +297,21 @@
                             <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
                         </div>
                         <div class="description">
-                            <div><b>Name:&nbsp;</b><p>data</p></div>
-                            <div><b>Duration:&nbsp;</b><p>data</p></div>
-                            <div><b>Genre:&nbsp;</b><p>data</p></div>
-                            <div><b>Writer:&nbsp;</b><p>data</p></div>
-                            <div><b>Producer:&nbsp;</b><p>data</p></div>
+                            <div><b>Name:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Duration:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Genre:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Writer:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Producer:&nbsp;</b>
+                                <p>data</p>
+                            </div>
                             <div><b>Actors:&nbsp;</b></div>
                             <ul>
                                 <li>Name</li>
@@ -237,11 +329,21 @@
                             <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
                         </div>
                         <div class="description">
-                            <div><b>Name:&nbsp;</b><p>data</p></div>
-                            <div><b>Duration:&nbsp;</b><p>data</p></div>
-                            <div><b>Genre:&nbsp;</b><p>data</p></div>
-                            <div><b>Writer:&nbsp;</b><p>data</p></div>
-                            <div><b>Producer:&nbsp;</b><p>data</p></div>
+                            <div><b>Name:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Duration:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Genre:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Writer:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Producer:&nbsp;</b>
+                                <p>data</p>
+                            </div>
                             <div><b>Actors:&nbsp;</b></div>
                             <ul>
                                 <li>Name</li>
@@ -259,11 +361,21 @@
                             <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
                         </div>
                         <div class="description">
-                            <div><b>Name:&nbsp;</b><p>data</p></div>
-                            <div><b>Duration:&nbsp;</b><p>data</p></div>
-                            <div><b>Genre:&nbsp;</b><p>data</p></div>
-                            <div><b>Writer:&nbsp;</b><p>data</p></div>
-                            <div><b>Producer:&nbsp;</b><p>data</p></div>
+                            <div><b>Name:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Duration:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Genre:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Writer:&nbsp;</b>
+                                <p>data</p>
+                            </div>
+                            <div><b>Producer:&nbsp;</b>
+                                <p>data</p>
+                            </div>
                             <div><b>Actors:&nbsp;</b></div>
                             <ul>
                                 <li>Name</li>
@@ -276,20 +388,21 @@
                             <p>Book ticket</p>
                         </a>
                     </div>
-                    
+
                 </div>
             </div>
         </main>
         <footer>
-            
+
             <a href="#"><img src="../../public/img/instagram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
             <a href="#"><img src="../../public/img/telegram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
             <a href="#"><img src="../../public/img/twitter.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
             <a href="#"><img src="../../public/img/whatsapp.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
             <a href="#"><img src="../../public/img/facebook.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
-            
+
         </footer>
     </div>
 </body>
 <script src="../../public/js/usersPage/home/index.js"></script>
+
 </html>
