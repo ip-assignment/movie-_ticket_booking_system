@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Owner Page</title>
-  <link rel="stylesheet" href="/public/css/ownerPage/owner.css" />
+  <link rel="stylesheet" href="../../public/css/ownerPage/owner.css?v=<?echo time()?>" />
 </head>
 
 <body>
@@ -15,20 +15,44 @@
       <p>Alem Cinema</p>
     </div>
     <input type="checkbox" id="menuBtn" />
-    <label for="menuBtn" class="menu-button">&#9776; Menu</label>
-    <input type="checkbox" id="closeBtn" />
-    <label for="closeBtn" class="close-button" style="display: none">&#10006; Close</label>
-    <div class="menu-container">
-      <div class="alem-cinema">Alem Cinema</div>
-      <div class="menu-content">
-        <a href="#">Home</a>
-        <a href="#">Reports</a>
-        <a href="#">Settings</a>
-        <a href="#">Logout</a>
-      </div>
-    </div>
+    <label for="menuBtn" class="menu-button" id="menuToggle">&#9776; Menu</label>
   </header>
   <section class="report-section">
+    <div class="menu" id="menu">
+            <div class="menuCon">
+                <div>
+                    <img src="../../public/img/exit.svg?v=<? echo time() ?>" id="exit" alt="">
+                </div>
+                <div>
+                    <h2>ALEM CINEMA</h2>
+                    <hr>
+                    <a href="http://localhost/movie/php/userPage/">
+                        <p>Home</p>
+                    </a>
+                    <hr>
+                    <a href="http://localhost/movie/php/menu/blog.php">
+                        <p>About</p>
+                    </a>
+                    <hr>
+                    <a href="#">
+                        <p>News Magazine</p>
+                    </a>
+                    <hr>
+                    <a href="#">
+                        <p>Contact</p>
+                    </a>
+                    <hr>
+                    <small>CONNECT WITH US</small>
+                    <div>
+                        <a href="#"><img src="../../public/img/menu/instagram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                        <a href="#"><img src="../../public/img/menu/telegram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                        <a href="#"><img src="../../public/img/menu/twitter.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                        <a href="#"><img src="../../public/img/menu/whatsapp.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                        <a href="#"><img src="../../public/img/menu/facebook.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     <h2>Booking Reports</h2>
     <div class="booking-reports">
       <!-- Sample Booking Report (replace with dynamic content) -->
@@ -53,7 +77,7 @@
       <p></p>
     </div>
   </footer>
-  <script src="/public/js/ownerPage/owner.js"></script>
+  <script src="../../public/js/ownerPage/owner.js"></script>
 </body>
 
 </html>

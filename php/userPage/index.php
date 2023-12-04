@@ -18,11 +18,11 @@
                 <div>
                     <h2>ALEM CINEMA</h2>
                     <hr>
-                    <a href="#">
+                    <a href="http://localhost/movie/php/userPage/">
                         <p>Home</p>
                     </a>
                     <hr>
-                    <a href="#">
+                    <a href="http://localhost/movie/php/menu/blog.php">
                         <p>About</p>
                     </a>
                     <hr>
