@@ -58,7 +58,7 @@
             </div>
         </div>
     <main>
-        <form action="" method="push">
+        <form action="" method="post">
             <input type="text" placeholder="Full Name" />
             <br /><br />
             <input type="text" placeholder="Email" />
