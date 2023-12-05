@@ -18,16 +18,16 @@
         <div class="bodyCon">
             <nav>
                 <div class="selected">
-                    <a href="http://localhost/md/php/adminPage/index.php">SignUp new Admin</a>
+                    <a href="http://localhost/movie/php/adminPage/index.php">SignUp new Admin</a>
                 </div>
                 <div>
-                    <a href="http://localhost/md/php/adminPage/assignMove/">Assign movies to cinema rooms</a>
+                    <a href="http://localhost/movie/php/adminPage/assignMove/">Assign movies to cinema rooms</a>
                 </div>
                 <div>
-                    <a href="http://localhost/md/php/adminPage/addCinemaRoom/">Add a new cinema room</a>
+                    <a href="http://localhost/movie/php/adminPage/addCinemaRoom/">Add a new cinema room</a>
                 </div>
                 <div>
-                    <a href="http://localhost/md/php/adminPage/addNewMove/">add new movies</a>
+                    <a href="http://localhost/movie/php/adminPage/addNewMove/">add new movies</a>
                 </div>
             </nav>
             <main>
