@@ -5,8 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alem | Ticket Booking</title>
-  <link rel="stylesheet" href="../../public/css/ticketpage/ticket.css"/>
+  <link rel="stylesheet" href="../../public/css/ticketpage/ticket.css" />
 </head>
+
 <body>
   <header>
     <img src="../../public/img/alem2.png" alt="Your Logo" class="logo" />
@@ -35,40 +36,40 @@
 
   <section class="movie-section">
     <div class="menu" id="menu">
-            <div class="menuCon">
-                <div>
-                    <img src="../../public/img/exit.svg?v=<? echo time() ?>" id="exit" alt="">
-                </div>
-                <div>
-                    <h2>ALEM CINEMA</h2>
-                    <hr>
-                    <a href="http://localhost/movie/php/userPage/">
-                        <p>Home</p>
-                    </a>
-                    <hr>
-                    <a href="http://localhost/movie/php/menu/blog.php">
-                        <p>About</p>
-                    </a>
-                    <hr>
-                    <a href="#">
-                        <p>News Magazine</p>
-                    </a>
-                    <hr>
-                    <a href="http://localhost/movie/php/menu/contact.php">
-                        <p>Contact</p>
-                    </a>
-                    <hr>
-                    <small>CONNECT WITH US</small>
-                    <div>
-                        <a href="#"><img src="../../public/img/menu/instagram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
-                        <a href="#"><img src="../../public/img/menu/telegram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
-                        <a href="#"><img src="../../public/img/menu/twitter.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
-                        <a href="#"><img src="../../public/img/menu/whatsapp.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
-                        <a href="#"><img src="../../public/img/menu/facebook.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
-                    </div>
-                </div>
-            </div>
+      <div class="menuCon">
+        <div>
+          <img src="../../public/img/exit.svg?v=<? echo time() ?>" id="exit" alt="">
         </div>
+        <div>
+          <h2>ALEM CINEMA</h2>
+          <hr>
+          <a href="http://localhost/movie/php/userPage/">
+            <p>Home</p>
+          </a>
+          <hr>
+          <a href="http://localhost/movie/php/menu/blog.php">
+            <p>About</p>
+          </a>
+          <hr>
+          <a href="http://localhost/movie/php/menu/contact.php">
+            <p>Contact</p>
+          </a>
+          <hr>
+          <a href="#">
+            <p>Logout</p>
+          </a>
+          <hr>
+          <small>CONNECT WITH US</small>
+          <div>
+            <a href="#"><img src="../../public/img/menu/instagram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+            <a href="#"><img src="../../public/img/menu/telegram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+            <a href="#"><img src="../../public/img/menu/twitter.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+            <a href="#"><img src="../../public/img/menu/whatsapp.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+            <a href="#"><img src="../../public/img/menu/facebook.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="movie-details">
       <img src="../../public/img/movie.jpg" alt="Main Image" class="main-image" />
       <div class="side-content">

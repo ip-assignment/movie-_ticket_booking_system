@@ -96,7 +96,7 @@
                                 <li>Name</li>
                             </ul>
                         </div>
-                        <a href="#" class="button">
+                        <a href="/php/ticketpage/index.php" class="button">
                             <p>Book ticket</p>
                         </a>
                     </div>
@@ -128,7 +128,7 @@
                                 <li>Name</li>
                             </ul>
                         </div>
-                        <a href="#" class="button">
+                        <a href="/php/ticketpage/index.php" class="button">
                             <p>Book ticket</p>
                         </a>
                     </div>
@@ -160,7 +160,7 @@
                                 <li>Name</li>
                             </ul>
                         </div>
-                        <a href="#" class="button">
+                        <a href="/php/ticketpage/index.php" class="button">
                             <p>Book ticket</p>
                         </a>
                     </div>
@@ -192,7 +192,7 @@
                                 <li>Name</li>
                             </ul>
                         </div>
-                        <a href="#" class="button">
+                        <a href="/php/ticketpage/index.php" class="button">
                             <p>Book ticket</p>
                         </a>
                     </div>
@@ -224,7 +224,7 @@
                                 <li>Name</li>
                             </ul>
                         </div>
-                        <a href="#" class="button">
+                        <a href="/php/ticketpage/index.php" class="button">
                             <p>Book ticket</p>
                         </a>
                     </div>
@@ -256,7 +256,7 @@
                                 <li>Name</li>
                             </ul>
                         </div>
-                        <a href="#" class="button">
+                        <a href="/php/ticketpage/index.php" class="button">
                             <p>Book ticket</p>
                         </a>
                     </div>
@@ -288,7 +288,7 @@
                                 <li>Name</li>
                             </ul>
                         </div>
-                        <a href="#" class="button">
+                        <a href="/php/ticketpage/index.php" class="button">
                             <p>Book ticket</p>
                         </a>
                     </div>
@@ -320,7 +320,7 @@
                                 <li>Name</li>
                             </ul>
                         </div>
-                        <a href="#" class="button">
+                        <a href="/php/ticketpage/index.php" class="button">
                             <p>Book ticket</p>
                         </a>
                     </div>
@@ -352,7 +352,7 @@
                                 <li>Name</li>
                             </ul>
                         </div>
-                        <a href="#" class="button">
+                        <a href="/php/ticketpage/index.php" class="button">
                             <p>Book ticket</p>
                         </a>
                     </div>
@@ -384,7 +384,7 @@
                                 <li>Name</li>
                             </ul>
                         </div>
-                        <a href="#" class="button">
+                        <a href="/php/ticketpage/index.php" class="button">
                             <p>Book ticket</p>
                         </a>
                     </div>
@@ -392,65 +392,65 @@
                 </div>
             </div>
             <div>
-            <div class="ss">
-            <table>
-            <thead>
-                <tr>
-                <th>Movie</th>
-                <th>Date</th>
-                <th>Showtimes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <td><a href="#" onclick="showDetailsA('Movie A')">Movie A</a></td>
-                <td>2023-01-01</td>
-                <td>12:00 PM, 3:00 PM, 6:00 PM</td>
-                </tr>
-                <tr>
-                <td><a href="#" onclick="showDetailsB('Movie B')">Movie B</a></td>
-                <td>2023-01-02</td>
-                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
-                </tr>
-                <tr>
-                <td><a href="#" onclick="showDetailsC('Movie C')">Movie C</a></td>
-                <td>2023-01-03</td>
-                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
-                </tr>
-                <tr>
-                <td><a href="#" onclick="showDetailsD('Movie D')">Movie D</a></td>
-                <td>2023-01-04</td>
-                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
-                </tr>
-                <tr>
-                <td><a href="#" onclick="showDetailsE('Movie E')">Movie E</a></td>
-                <td>2023-01-04</td>
-                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
-                </tr>
-                <tr>
-                <td><a href="#" onclick="showDetailsE('Movie F')">Movie F</a></td>
-                <td>2023-01-04</td>
-                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
-                </tr>
-                <tr>
-                <td><a href="#" onclick="showDetailsE('Movie G')">Movie G</a></td>
-                <td>2023-01-04</td>
-                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
-                </tr>
-                <tr>
-                <td><a href="#" onclick="showDetailsE('Movie H')">Movie H</a></td>
-                <td>2023-01-04</td>
-                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
-                </tr>
-                <tr>
-                <td><a href="#" onclick="showDetailsE('Movie I')">Movie I</a></td>
-                <td>2023-01-04</td>
-                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
-                </tr>
-                <!-- Add more rows as needed -->
-            </tbody>
-            </table>
-      </div>
+                <div class="ss">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Movie</th>
+                                <th>Date</th>
+                                <th>Showtimes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#" onclick="showDetailsA('Movie A')">Movie A</a></td>
+                                <td>2023-01-01</td>
+                                <td>12:00 PM, 3:00 PM, 6:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showDetailsB('Movie B')">Movie B</a></td>
+                                <td>2023-01-02</td>
+                                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showDetailsC('Movie C')">Movie C</a></td>
+                                <td>2023-01-03</td>
+                                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showDetailsD('Movie D')">Movie D</a></td>
+                                <td>2023-01-04</td>
+                                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showDetailsE('Movie E')">Movie E</a></td>
+                                <td>2023-01-04</td>
+                                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showDetailsE('Movie F')">Movie F</a></td>
+                                <td>2023-01-04</td>
+                                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showDetailsE('Movie G')">Movie G</a></td>
+                                <td>2023-01-04</td>
+                                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showDetailsE('Movie H')">Movie H</a></td>
+                                <td>2023-01-04</td>
+                                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showDetailsE('Movie I')">Movie I</a></td>
+                                <td>2023-01-04</td>
+                                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </main>
         <footer>
