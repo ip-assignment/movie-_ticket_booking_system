@@ -26,12 +26,12 @@
                         <p>About</p>
                     </a>
                     <hr>
-                    <a href="#">
-                        <p>News Magazine</p>
+                    <a href="http://localhost/movie/php/menu/contact.php">
+                        <p>Contact</p>
                     </a>
                     <hr>
                     <a href="#">
-                        <p>Contact</p>
+                        <p>Logout</p>
                     </a>
                     <hr>
                     <small>CONNECT WITH US</small>

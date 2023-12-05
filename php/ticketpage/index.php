@@ -54,7 +54,7 @@
                         <p>News Magazine</p>
                     </a>
                     <hr>
-                    <a href="#">
+                    <a href="http://localhost/movie/php/menu/contact.php">
                         <p>Contact</p>
                     </a>
                     <hr>

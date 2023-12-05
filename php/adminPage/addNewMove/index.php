@@ -45,7 +45,7 @@
                 <div id="home">
                    
                      <form action="index.php" method="post">
-                        <div class="inputCon">
+                        <div class="row">
                             <div>
                                 <label for="gender">Move Name:</label>
                                 <input type="text" name="moveName" id="">

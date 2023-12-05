@@ -5,103 +5,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Movie Ticketing System - About Us</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-image: url(/public/img/slider-bg.png);
-      background-size: cover;
-    }
-
-    header {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 1em 0;
-    }
-
-    section {
-      max-width: 800px;
-      margin: 2em auto;
-      padding: 20px;
-      background-color: #fdfbfb;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      color: #474444;
-      border-radius: 8px;
-      text-align: justify;
-    }
-
-    h1,
-    h2 {
-      color: #333;
-    }
-
-    p {
-      line-height: 1.6;
-    }
-
-    footer {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 1em 0;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 20px;
-    }
-
-    .cont-1,
-    .cont-2,
-    .cont-3,
-    .cont-4 {
-      flex: 1;
-      padding: 20px;
-      border-radius: 8px;
-      border-style: groove;
-      border-color: rgb(207, 207, 207);
-    }
-
-    .cont-1,
-    .cont-3,
-    .cont-4 {
-      margin-bottom: 10%;
-    }
-
-    .cont-2 {
-      margin-top: 20px;
-      margin-bottom: 20%;
-    }
-
-    @media only screen and (max-width: 600px) {
-      .container {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .cont-1,
-      .cont-2,
-      .cont-3,
-      .cont-4 {
-        width: 100%;
-        margin-top: 20px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="../../public/css/menu/blog.css?v=<?php echo time()?>">
 </head>
 
 <body>
   <header>
-    <h1>About Movie Ticketing System</h1>
+    <div>
+        <a href="http://localhost/movie/php/userPage/">
+            <img src="../../public/img/download-removebg-preview.png" alt="error" height="150">
+        </a>
+    </div>
+    <div id="menuToggle">
+        <div>
+            <p>menu</p>
+        </div>
+        <div><a href="#"><img src="../../public/img/menu-burger.svg?v=<?php echo time() ?>" alt="" srcset="" width="30"></a></div>
+    </div>
   </header>
-
+        <div class="menu" id="menu">
+            <div class="menuCon">
+                <div>
+                    <img src="../../public/img/exit.svg?v=<? echo time() ?>" id="exit" alt="">
+                </div>
+                <div>
+                    <h2>ALEM CINEMA</h2>
+                    <hr>
+                    <a href="http://localhost/movie/php/userPage/">
+                        <p>Home</p>
+                    </a>
+                    <hr>
+                    <a href="http://localhost/movie/php/menu/blog.php">
+                        <p>About</p>
+                    </a>
+                    <hr>
+                    <a href="http://localhost/movie/php/menu/contact.php">
+                      <p>Contact</p>
+                    </a>
+                    <hr>
+                    <a href="#">
+                        <p>Logout</p>
+                    </a>
+                    <hr>
+                    <small>CONNECT WITH US</small>
+                    <div>
+                        <a href="#"><img src="../../public/img/menu/instagram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                        <a href="#"><img src="../../public/img/menu/telegram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                        <a href="#"><img src="../../public/img/menu/twitter.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                        <a href="#"><img src="../../public/img/menu/whatsapp.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                        <a href="#"><img src="../../public/img/menu/facebook.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
   <section>
     <h2>Our Mission</h2>
     <p>
@@ -191,7 +146,13 @@
     </div>
   </div>
 
-  <footer>&copy; 2023 Movie Ticketing System. All rights reserved.</footer>
+  <footer> 
+    <a href="#"><img src="../../public/img/instagram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+    <a href="#"><img src="../../public/img/telegram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+    <a href="#"><img src="../../public/img/twitter.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+    <a href="#"><img src="../../public/img/whatsapp.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+    <a href="#"><img src="../../public/img/facebook.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+  </footer>
 </body>
-
+<script src="../../public/js/menu/blog.js"></script>
 </html>

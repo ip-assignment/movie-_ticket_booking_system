@@ -5,89 +5,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Ticketing System - Contact</title>
-    <style>
-        body {
-            font-family: "Arial", sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url(/public/img/slider-bg.png);
-            background-size: cover;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em 0;
-        }
-
-        h1,
-        h2 {
-            color: #333;
-        }
-
-        main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 80vh;
-        }
-
-        form {
-            width: 80%;
-            max-width: 800px;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
-
-        input[type="text"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
-
-        textarea {
-            resize: vertical;
-        }
-
-        input[type="submit"] {
-            width: 100%;
-            background-color: #333;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 18px;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #555;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="../../public/css/menu/contact.css?v=<?php echo time() ?>">
 </head>
 
 <body>
     <header>
-        <h1>Contact Movie Ticketing System</h1>
+        <div>
+        <a href="http://localhost/movie/php/userPage/">
+            <img src="../../public/img/download-removebg-preview.png" alt="error" height="150">
+        </a>
+    </div>
+    <div id="menuToggle">
+        <div>
+            <p>menu</p>
+        </div>
+        <div><a href="#"><img src="../../public/img/menu-burger.svg?v=<?php echo time() ?>" alt="" srcset="" width="30"></a></div>
+    </div>
     </header>
+     <div class="menu" id="menu">
+            <div class="menuCon">
+                <div>
+                    <img src="../../public/img/exit.svg?v=<? echo time() ?>" id="exit" alt="">
+                </div>
+                <div>
+                    <h2>ALEM CINEMA</h2>
+                    <hr>
+                    <a href="http://localhost/movie/php/userPage/">
+                        <p>Home</p>
+                    </a>
+                    <hr>
+                    <a href="http://localhost/movie/php/menu/blog.php">
+                        <p>About</p>
+                    </a>
+                    <hr>
+                    <a href="http://localhost/movie/php/menu/contact.php">
+                        <p>Contact</p>
+                    </a>
+                    <hr>
+                    <a href="#">
+                        <p>Logout</p>
+                    </a>
+                    <hr>
+                    <small>CONNECT WITH US</small>
+                    <div>
+                        <a href="#"><img src="../../public/img/menu/instagram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                        <a href="#"><img src="../../public/img/menu/telegram.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                        <a href="#"><img src="../../public/img/menu/twitter.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                        <a href="#"><img src="../../public/img/menu/whatsapp.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                        <a href="#"><img src="../../public/img/menu/facebook.svg?v=<?php echo time() ?>" alt="" srcset=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     <main>
         <form action="" method="push">
             <input type="text" placeholder="Full Name" />
@@ -105,5 +74,5 @@
     </main>
     <footer>&copy; 2023 Movie Ticketing System. All rights reserved.</footer>
 </body>
-
+<script src="../../public/js/menu/contact.js"></script>
 </html>
