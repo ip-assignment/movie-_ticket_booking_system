@@ -10,7 +10,7 @@
 
 <body>
   <header>
-    <img src="/public/img/owner.jpg" alt="Owner Logo" class="logo" />
+    <img src="../../public/img/owner.jpg" alt="Owner Logo" class="logo" />
     <div class="name">
       <p>Alem Cinema</p>
     </div>

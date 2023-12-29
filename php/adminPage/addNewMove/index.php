@@ -18,16 +18,16 @@
         <div class="bodyCon">
             <nav>
                 <div>
-                    <a href="http://localhost/md/php/adminPage/index.php">SignUp new Admin</a>
+                    <a href="http://localhost/movie/php/adminPage/index.php">SignUp new Admin</a>
                 </div>
                 <div>
-                    <a href="http://localhost/md/php/adminPage/assignMove/">Assign movies to cinema rooms</a>
+                    <a href="http://localhost/movie/php/adminPage/assignMove/">Assign movies to cinema rooms</a>
                 </div>
                 <div>
-                    <a href="http://localhost/md/php/adminPage/addCinemaRoom/">Add a new cinema room</a>
+                    <a href="http://localhost/movie/php/adminPage/addCinemaRoom/">Add a new cinema room</a>
                 </div>
                 <div class="selected">
-                    <a href="http://localhost/md/php/adminPage/addNewMove/">add new movies</a>
+                    <a href="http://localhost/movie/php/adminPage/addNewMove/">add new movies</a>
                 </div>
             </nav>
             <main>
@@ -55,6 +55,28 @@
                                 <input type="number" name="reliesDate">
                             </div>
                         </div>
+                        <div>
+                            <label for="">Air Time</label>
+                            <input type="time">
+                        </div>
+                        <div>
+                            <label for="">Genre</label>
+                            <input type="text">
+                        </div>
+                        <div class="row">
+                            <div>
+                                <label for="">Writer</label>
+                                <input type="text">
+                            </div>
+                            <div>
+                                <label for="">Producer</label>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="">Actors</label>
+                            <input type="text">
+                        </div>
                         <br>
                         <button type="submit" name="add">Add</button>
                         <button type="reset">reset</button>
@@ -78,7 +100,7 @@
                             <label for="first_name">ID:</label>
                             <input type="text" id="first_name" name="Did" placeholder="id" required disabled>
                         </div>
-                            <div class="inputCon">
+                            <div class="row">
                                 <div>
                                     <label for="gender">Move Name:</label>
                                     <input type="text" name="moveName" id="">
@@ -87,6 +109,28 @@
                                     <label for="gender">Relies Date:</label>
                                     <input type="number" name="reliesDate">
                                 </div>
+                            </div>
+                            <div>
+                                <label for="">Air Time</label>
+                                <input type="time">
+                            </div>
+                            <div>
+                                <label for="">Genre</label>
+                                <input type="text">
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <label for="">Writer</label>
+                                    <input type="text">
+                                </div>
+                                <div>
+                                    <label for="">Producer</label>
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="">Actors</label>
+                                <input type="text">
                             </div>
                             <br>
                             <button type="submit" name="edit">Edit</button>

@@ -106,7 +106,7 @@
 
   <div class="container">
     <div class="cont-1">
-      <img src="/public/img/man1.jpg" alt="" />
+      <img src="../../public/img/man1.jpg" alt="" />
       <h4 style="margin: auto">Haile Resort</h4>
       Haile Hospitality Group (HHG) is a group of businesses focused on the
       hospitality sector. Ethiopian Hospitality is renowned for going above
@@ -116,7 +116,7 @@
       country.
     </div>
     <div class="cont-2">
-      <img src="/public/img/man2.jpg" alt="" />
+      <img src="../../public/img/man2.jpg" alt="" />
       <h4 style="margin: auto">Alem Bride city</h4>
       Alem Bride City and Spa is a Unique Salon and Spa located in Addis Ababa
       focused on providing elegant beautification services for brides and
@@ -127,7 +127,7 @@
       glowing and smooth skin.
     </div>
     <div class="cont-3">
-      <img src="/public/img/man3.jpg" alt="" />
+      <img src="../../public/img/man3.jpg" alt="" />
       <h4 style="margin: auto">Haile Real Estate</h4>
       Haile Real Estate is one of the pioneers in the private real estate
       sector in Ethiopia, since 2000. Initially, we focused on constructing
@@ -135,7 +135,7 @@
       Ababa
     </div>
     <div class="cont-4">
-      <img src="/public/img/man4.jpg" alt="" />
+      <img src="../../public/img/man4.jpg" alt="" />
       <h4 style="margin: auto">Haile Coffee</h4>
       Haile Coffee™ is a specialty coffee harvested from our own farm, Haile
       Estate Plantation at Yeppo, planted on over 1,100 hectares of land in
