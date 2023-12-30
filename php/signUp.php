@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/css/signUp.css?v=<?php echo time()?>">
+    <link rel="stylesheet" href="../public/css/signUp.css?v=<?php echo time() ?>">
     <title>Sign up</title>
 </head>
+
 <body>
     <div class="formContainer">
         <h1>SignUp Form</h1>
@@ -34,7 +36,7 @@
                 <div>
                     <label for="email">Email</label>
                 </div>
-                <input type="email" name="email" placeholder="example@gmail.com" required>
+                <input type="text" name="email" placeholder="example@gmail.com" required>
             </div>
             <div class="inputContainer">
                 <div>
@@ -66,4 +68,35 @@
         </form>
     </div>
 </body>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $firstName = $_POST["firstName"];
+    $lastName = $_POST["lastName"];
+    $userName = $_POST["userName"];
+    $email = $_POST["email"];
+    $gender = $_POST["gender"];
+    $password = $_POST["password"];
+    $conPassword = $_POST["conPassword"];
+
+    if (!preg_match('/^[a-zA-Z]{6,}$/', $firstName)) {
+        echo '<script>alert("Invalid First Name. Enter a valid first name (at least 6 characters, letters only)");</script>';
+    }
+    if (!preg_match('/^[a-zA-Z]{6,}$/', $lastName)) {
+        echo '<script>alert("Invalid Last Name. Enter a valid last name (at least 6 characters, letters only)");</script>';
+    }
+    if (!preg_match('/^[a-zA-Z0-9._%+-]{5,}$/', $userName)) {
+        echo '<script>alert("Invalid UserName. Enter a valid username (at least 5 characters, letters, digits, and the following special characters: . _ % + -)");</script>';
+    }
+    if (!preg_match('/^[a-zA-Z0-9._%+-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/', $email)) {
+        echo '<script>alert("Invalid Email. Enter a valid email address.");</script>';
+    }
+    if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z]).{8,}$/', $password)) {
+        echo '<script>alert("Invalid Password. Password must be at least 8 characters and contain at least one uppercase and one lowercase letter.");</script>';
+    }
+    if ($password !== $conPassword) {
+        echo '<script>alert("Passwords do not match.");</script>';
+    }
+}
+?>
+
 </html>
