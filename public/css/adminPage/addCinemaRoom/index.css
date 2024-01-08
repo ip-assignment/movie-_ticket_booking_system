@@ -219,3 +219,8 @@ tr:nth-of-type(2n + 2){
 td:nth-child(1){
     font-weight: bold;
 }
+
+.row{
+    display: flex;
+    flex-direction: row;
+}

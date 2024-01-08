@@ -1,3 +1,7 @@
+<?php 
+    include '../config/config.php'
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,10 +64,47 @@
                 </div>
             </div>
             <div class="buttonContainer">
-                <button type="submit" value="LogIn">signUp</button>
+                <button type="submit" name="log" value="LogIn">signUp</button>
                 <button type="reset" value="Cancel">Cancel</button>
             </div>
         </form>
     </div>
 </body>
+<?php 
+    $firstName = isset($_POST['firstName'])?mysqli_real_escape_string($conn, trim($_POST['firstName'])):null;
+    $lastName = isset($_POST['lastName'])?mysqli_real_escape_string($conn, trim($_POST['lastName'])):null;
+    $userName = isset($_POST['userName'])?mysqli_real_escape_string($conn, trim($_POST['userName'])):null;
+    $email = isset($_POST['email'])?mysqli_real_escape_string($conn, trim($_POST['email'])):null;
+    $gender = isset($_POST['gender'])?mysqli_real_escape_string($conn, trim($_POST['gender'])):null;
+    $password = isset($_POST['password'])?mysqli_real_escape_string($conn, trim($_POST['password'])):null;
+    $conPassword = isset($_POST['conPassword'])?mysqli_real_escape_string($conn, trim($_POST['conPassword'])):null;
+    if(isset($_POST['log'])){
+        if($password == $conPassword && $password && $conPassword){
+            $query = "
+                        INSERT IGNORE INTO `users` (`U_FirstName`, `U_LastName`, `U_UserName`, `U_Email`, `U_Gender`, `U_password`)
+                        VALUES ('$firstName', '$lastName', '$userName', '$email', '$gender', '$password')
+                    ";
+            $result = mysqli_query($conn, $query);
+    
+            if ($result) {
+                if (mysqli_affected_rows($conn) <= 0) {
+                   echo "<script>alert('Username already exists. Please choose a different username.')</script>";
+                }else{
+                    $query = "SELECT * FROM `users` WHERE `U_UserName` = '$userName'";
+                    $result = mysqli_query($conn, $query);
+                    $data = mysqli_fetch_assoc($result);
+                    $_SESSION['state'] = $data['U_state'];
+                    $_SESSION['id'] = $data['U_id'];
+                    header("Location: http://localhost/movie/php/userPage", true);
+                    exit();
+                }    
+            } else {
+                echo "<script>alert('Something went wrong, please try again later.')</script>";
+            }
+        }else{
+            echo "<script>alert('password does not match')</script>";
+        }
+    }
+
+?>
 </html>

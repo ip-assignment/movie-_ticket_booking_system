@@ -96,7 +96,7 @@
                                 <li>Name</li>
                             </ul>
                         </div>
-                        <a href="/php/ticketpage/index.php" class="button">
+                        <a href="http://localhost/movie/php/ticketpage/" class="button">
                             <p>Book ticket</p>
                         </a>
                     </div>
@@ -128,7 +128,7 @@
                                 <li>Name</li>
                             </ul>
                         </div>
-                        <a href="/php/ticketpage/index.php" class="button">
+                        <a href="" class="button">
                             <p>Book ticket</p>
                         </a>
                     </div>
@@ -160,7 +160,7 @@
                                 <li>Name</li>
                             </ul>
                         </div>
-                        <a href="/php/ticketpage/index.php" class="button">
+                        <a href="" class="button">
                             <p>Book ticket</p>
                         </a>
                     </div>
@@ -192,7 +192,7 @@
                                 <li>Name</li>
                             </ul>
                         </div>
-                        <a href="/php/ticketpage/index.php" class="button">
+                        <a href="" class="button">
                             <p>Book ticket</p>
                         </a>
                     </div>
@@ -224,7 +224,7 @@
                                 <li>Name</li>
                             </ul>
                         </div>
-                        <a href="/php/ticketpage/index.php" class="button">
+                        <a href="" class="button">
                             <p>Book ticket</p>
                         </a>
                     </div>
@@ -256,7 +256,7 @@
                                 <li>Name</li>
                             </ul>
                         </div>
-                        <a href="/php/ticketpage/index.php" class="button">
+                        <a href="" class="button">
                             <p>Book ticket</p>
                         </a>
                     </div>
@@ -288,7 +288,7 @@
                                 <li>Name</li>
                             </ul>
                         </div>
-                        <a href="/php/ticketpage/index.php" class="button">
+                        <a href="" class="button">
                             <p>Book ticket</p>
                         </a>
                     </div>
@@ -320,7 +320,7 @@
                                 <li>Name</li>
                             </ul>
                         </div>
-                        <a href="/php/ticketpage/index.php" class="button">
+                        <a href="" class="button">
                             <p>Book ticket</p>
                         </a>
                     </div>
@@ -352,7 +352,7 @@
                                 <li>Name</li>
                             </ul>
                         </div>
-                        <a href="/php/ticketpage/index.php" class="button">
+                        <a href="" class="button">
                             <p>Book ticket</p>
                         </a>
                     </div>
@@ -384,7 +384,7 @@
                                 <li>Name</li>
                             </ul>
                         </div>
-                        <a href="/php/ticketpage/index.php" class="button">
+                        <a href="" class="button">
                             <p>Book ticket</p>
                         </a>
                     </div>

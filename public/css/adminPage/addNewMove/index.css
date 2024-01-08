@@ -216,3 +216,62 @@ tr:nth-of-type(2n + 2){
 td:nth-child(1){
     font-weight: bold;
 }
+
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.file-input-container {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.file-input {
+    width: 40%;
+    height: 40px;
+    font-size: 16px;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #ecf0f1;
+    color: #555;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+    border: none; /* Remove border to make it less like a button */
+}
+
+.file-input:hover,
+.file-input:focus {
+    border-color: #2c3e50;
+}
+
+.file-input-container::before {
+    content: 'Choose File';
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #555;
+}
+
+.file-input-container input {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Add more styling as needed */
+
+
+/* Add more styling as needed */
+
+

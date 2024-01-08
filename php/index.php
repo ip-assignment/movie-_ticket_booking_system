@@ -1,3 +1,9 @@
+<?php 
+    include '../config/config.php';
+    session_start()
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,4 +36,27 @@
         </form>
     </div>
 </body>
+    <?php 
+        $userName = isset($_POST['userName'])?mysqli_real_escape_string($conn, $_POST['userName']):null;
+        $password = isset($_POST['password'])?mysqli_real_escape_string($conn, $_POST['password']):null;
+        if($userName && $password){
+            $query = "SELECT * FROM `users` WHERE `U_UserName` = '".$userName."' AND `U_password` = '".$password."'";
+            $result = mysqli_query($conn, $query);
+
+            if($data = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                $_SESSION['state'] = $data['U_state'];
+                $_SESSION['id'] = $data['U_id'];
+                if($data['U_state']){
+                    header("Location: http://localhost/movie/php/adminPage", true);
+                    exit();
+                }else{
+                    header("Location: http://localhost/movie/php/userPage", true);
+                    exit();
+                }
+            }else{
+                echo "no data";
+            }
+        }
+
+    ?>
 </html>

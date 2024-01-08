@@ -1,5 +1,5 @@
 <?php 
-function generateCinemaSeats($numSeats) {
+function generateCinemaSeats($numSeats, $pre) {
     if ($numSeats <= 0) {
         return [];
     }
@@ -11,7 +11,7 @@ function generateCinemaSeats($numSeats) {
     while (count($seats) < $numSeats) {
         $seatIdentifier = $row . $seatNumber;
 
-        $seats[] = $seatIdentifier;
+        $seats[] = $seatIdentifier.$pre;
 
         // Increment the seat number and handle row changes
         $seatNumber++;

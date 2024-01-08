@@ -1,7 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const editParam = urlParams.get("edit");
 const deleteParam = urlParams.get("delete");
-console.log("asdf");
+console.log("asssssssssssssssssssssssssssssssssdf");
 const home = document.getElementById("home");
 const edit = document.getElementById("edit");
 const deleteU = document.getElementById("delete");
@@ -66,4 +66,9 @@ deleteTG.addEventListener("click", () => {
   home.setAttribute("class", "areaSelected");
   edit.setAttribute("class", "areaSelected");
   deleteU.setAttribute("class", "null");
+});
+
+document.getElementById("moviePoster").addEventListener("change", function (e) {
+  var fileName = e.target.files[0].name;
+  document.getElementById("selectedFileName").textContent = fileName;
 });
