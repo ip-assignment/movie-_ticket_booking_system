@@ -1,5 +1,6 @@
 <?php 
-    include '../config/config.php'
+    include '../config/config.php';
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +41,7 @@
                 <div>
                     <label for="email">Email</label>
                 </div>
-                <input type="text" name="email" placeholder="example@gmail.com" required>
+                <input type="email" name="email" placeholder="example@gmail.com" required>
             </div>
             <div class="inputContainer">
                 <div>
@@ -84,37 +85,33 @@
         if (preg_match('/^[a-zA-Z]{6,}$/', $firstName)) {
             if (preg_match('/^[a-zA-Z]{6,}$/', $lastName)) {
                 if (preg_match('/^[a-zA-Z0-9._%+-]{5,}$/', $userName)) {
-                    if (preg_match('/^[a-zA-Z0-9._%+-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/', $email)) {
-                        if (preg_match('/^(?=.*[a-z])(?=.*[A-Z]).{8,}$/', $password)) {
-                            if($password == $conPassword && $password && $conPassword){
-                                $query = "
-                                            INSERT IGNORE INTO `users` (`U_FirstName`, `U_LastName`, `U_UserName`, `U_Email`, `U_Gender`, `U_password`)
-                                            VALUES ('$firstName', '$lastName', '$userName', '$email', '$gender', '$password')
-                                        ";
-                                $result = mysqli_query($conn, $query);
-                                if ($result) {
-                                    if (mysqli_affected_rows($conn) <= 0) {
-                                    echo "<script>alert('Username already exists. Please choose a different username.')</script>";
-                                    }else{
-                                        $query = "SELECT * FROM `users` WHERE `U_UserName` = '$userName'";
-                                        $result = mysqli_query($conn, $query);
-                                        $data = mysqli_fetch_assoc($result);
-                                        $_SESSION['state'] = $data['U_state'];
-                                        $_SESSION['id'] = $data['U_id'];
-                                        header("Location: http://localhost/movie/php/userPage", true);
-                                        exit();
-                                    }    
-                                } else {
-                                    echo "<script>alert('Something went wrong, please try again later.')</script>";
-                                }
-                            }else{
-                                echo "<script>alert('password does not match')</script>";
+                    if (preg_match('/^(?=.*[a-z])(?=.*[A-Z]).{8,}$/', $password)) {
+                        if($password == $conPassword && $password && $conPassword){
+                            $query = "
+                                        INSERT IGNORE INTO `users` (`U_FirstName`, `U_LastName`, `U_UserName`, `U_Email`, `U_Gender`, `U_password`)
+                                        VALUES ('$firstName', '$lastName', '$userName', '$email', '$gender', '$password')
+                                    ";
+                            $result = mysqli_query($conn, $query);
+                            if ($result) {
+                                if (mysqli_affected_rows($conn) <= 0) {
+                                echo "<script>alert('Username already exists. Please choose a different username.')</script>";
+                                }else{
+                                    $query = "SELECT * FROM `users` WHERE `U_UserName` = '$userName'";
+                                    $result = mysqli_query($conn, $query);
+                                    $data = mysqli_fetch_assoc($result);
+                                    $_SESSION['state'] = $data['U_state'];
+                                    $_SESSION['id'] = $data['U_id'];
+                                    header("Location: http://localhost/movie/php/userPage", true);
+                                    exit();
+                                }    
+                            } else {
+                                echo "<script>alert('Something went wrong, please try again later.')</script>";
                             }
                         }else{
-                            echo '<script>alert("Invalid Password. Password must be at least 8 characters and contain at least one uppercase and one lowercase letter.");</script>';
+                            echo "<script>alert('password does not match')</script>";
                         }
                     }else{
-                        echo '<script>alert("Invalid Email. Enter a valid email address.");</script>';
+                        echo '<script>alert("Invalid Password. Password must be at least 8 characters and contain at least one uppercase and one lowercase letter.");</script>';
                     }
                 }else{
                     echo '<script>alert("Invalid UserName. Enter a valid username (at least 5 characters, letters, digits, and the following special characters: . _ % + -)");</script>';
