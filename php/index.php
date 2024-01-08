@@ -6,12 +6,14 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/loginPage.css?v=<?php echo time(); ?>">
     <title>Login Page</title>
 </head>
+
 <body>
     <div class="formContainer">
         <h1>Login Form</h1>
@@ -24,7 +26,7 @@
             </div>
             <div class="inputContainer">
                 <div>
-                <label for="password">Password</label>
+                    <label for="password">Password</label>
                 </div>
                 <input type="password" name="password" placeholder="Password" required>
             </div>
@@ -40,23 +42,32 @@
         $userName = isset($_POST['userName'])?mysqli_real_escape_string($conn, $_POST['userName']):null;
         $password = isset($_POST['password'])?mysqli_real_escape_string($conn, $_POST['password']):null;
         if($userName && $password){
-            $query = "SELECT * FROM `users` WHERE `U_UserName` = '".$userName."' AND `U_password` = '".$password."'";
-            $result = mysqli_query($conn, $query);
-
-            if($data = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                $_SESSION['state'] = $data['U_state'];
-                $_SESSION['id'] = $data['U_id'];
-                if($data['U_state']){
-                    header("Location: http://localhost/movie/php/adminPage", true);
-                    exit();
+            if (preg_match('/^[a-zA-Z0-9._%+-]{6,}$/', $userName)) {
+                if (preg_match('/^.*(?=.*[a-z])(?=.*[A-Z]).{8,}$/', $password)) {
+                    $query = "SELECT * FROM `users` WHERE `U_UserName` = '".$userName."' AND `U_password` = '".$password."'";
+                    $result = mysqli_query($conn, $query);
+                    if($data = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                        $_SESSION['state'] = $data['U_state'];
+                        $_SESSION['id'] = $data['U_id'];
+                        if($data['U_state']){
+                            header("Location: http://localhost/movie/php/adminPage", true);
+                            exit();
+                        }else{
+                            header("Location: http://localhost/movie/php/userPage", true);
+                            exit();
+                        }
+                    }else{
+                        echo "no data";
+                    }
                 }else{
-                    header("Location: http://localhost/movie/php/userPage", true);
-                    exit();
+                    echo '<script>alert("Invalid Password. Must be at least 8 characters and contain at least one uppercase and one lowercase letter.");</script>';
                 }
             }else{
-                echo "no data";
+                echo '<script>alert("Invalid UserName. Must be at least 6 characters and can only contain letters, digits, and the following special characters: . _ % + -");</script>';
             }
+            
         }
 
     ?>
+
 </html>
