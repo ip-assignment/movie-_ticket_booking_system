@@ -1,6 +1,10 @@
 <?php 
     include '../../config/config.php';
-
+    session_start();
+    if(!isset($_SESSION['state'])){
+        header('Location: http://localhost/movie/php', true);
+        exit();     
+    }
     $mQuery = "SELECT * FROM `movies` WHERE (
                 SELECT COUNT(*) FROM `schedule` WHERE `movies`.M_id = `schedule`.M_id
                 ) > 0;
@@ -50,7 +54,7 @@
                         <p>Contact</p>
                     </a>
                     <hr>
-                    <a href="#">
+                    <a href="http://localhost/movie/php/logout.php">
                         <p>Logout</p>
                     </a>
                     <hr>
@@ -122,14 +126,42 @@
                                         <li>%s</li>
                                 ',$actors[$i]);
                             }
-                            printf("
-                                    </ul>
+                            // $boQuery =  "SELECT *
+                            //                 FROM `schedule`
+                            //                 WHERE M_id = ".$mData['M_id']."
+                            //                 AND NOT EXISTS (
+                            //                     SELECT 1
+                            //                     FROM `seatas`
+                            //                     WHERE `seatas`.R_id = `schedule`.R_id
+                            //                     AND NOT EXISTS (
+                            //                         SELECT 1
+                            //                         FROM `reserve`
+                            //                         WHERE `seatas`.S_id = `reserve`.S_id
+                            //                     )
+                            //                 );";
+
+                            // $boResult = mysqli_query($conn, $boQuery);
+                            // $boData = mysqli_fetch_assoc($boResult);
+                            // print_r($boData);
+                            // if($boData){
+                            //     printf("
+                            //             </ul>
+                            //                 </div>
+                            //                 <a href='#' style='background-color: red; color:white;' class='button'>
+                            //                     <p>Book ticket</p>
+                            //                 </a>
+                            //             </div>
+                            //         ");
+                            // }else{
+                                printf("
+                                        </ul>
+                                            </div>
+                                            <a href='http://localhost/movie/php/ticketpage?id=".$mData['M_id']."' class='button'>
+                                                <p>Book ticket</p>
+                                            </a>
                                         </div>
-                                        <a href='http://localhost/movie/php/ticketpage?id=".$mData['M_id']."' class='button'>
-                                            <p>Book ticket</p>
-                                        </a>
-                                    </div>
-                                ");
+                                    ");
+                        //     }
                         }
                     ?>
                 </div>
@@ -137,7 +169,7 @@
             <div>
                 <div class="ss">
                     <table>
-                        <thead>
+                        <thead >
                             <tr>
                                 <th>Movie</th>
                                 <th>Date</th>

@@ -4,6 +4,15 @@
   session_start();
   $Q_Str = parse_str($_SERVER['QUERY_STRING'], $parameters);
   $param = isset($parameters['id'])?$parameters['id']:null;
+  if(!isset($_SESSION['state'])){
+    header('Location: http://localhost/movie/php', true);
+    exit(); 
+  }
+
+  if(!isset($param)){
+    header('Location: http://localhost/movie/php/userPage', true);
+    exit();
+  }
 
 ?>
 
@@ -64,7 +73,7 @@
             <p>Contact</p>
           </a>
           <hr>
-          <a href="#">
+          <a href="http://localhost/movie/php/logout.php">
             <p>Logout</p>
           </a>
           <hr>
