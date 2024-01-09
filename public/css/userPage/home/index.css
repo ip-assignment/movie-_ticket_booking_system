@@ -180,10 +180,10 @@ footer img{
 .menu div:nth-of-type(2){
     padding-left: 20px;
     padding-right: 20px;
-    color: darkgray;
+    color: rgb(104, 104, 104);
 }
 .menu div:nth-of-type(2) a{
-    color: darkgray;
+    color: rgb(104, 104, 104);
     text-decoration: none;
     :hover{
         color: orangered;

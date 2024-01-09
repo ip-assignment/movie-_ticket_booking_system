@@ -1,6 +1,26 @@
+<?php 
+    include '../../config/config.php';
+
+    $mQuery = "SELECT * FROM `movies` WHERE (
+                SELECT COUNT(*) FROM `schedule` WHERE `movies`.M_id = `schedule`.M_id
+                ) > 0;
+            ";
+
+            
+
+    if(isset($_POST['mSearch'])){
+        $Mname = isset($_POST['mName'])?mysqli_real_escape_string($conn, $_POST['mName']):null;
+        if($Mname){
+            $mQuery = "SELECT * FROM `movies` WHERE M_name = '$Mname' AND (
+                SELECT COUNT(*) FROM `schedule` WHERE `movies`.M_id = `schedule`.M_id
+            ) > 0";
+        }
+    }
+    $mResult = mysqli_query($conn, $mQuery)
+
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,8 +72,8 @@
                 </a>
                 <div class="searchCon">
                     <form action="" method="post">
-                        <input type="text" placeholder="search">
-                        <button>Search</button>
+                        <input type="text" placeholder="search" name="mName">
+                        <button type="submit" name="mSearch">Search</button>
                     </form>
                 </div>
             </div>
@@ -68,327 +88,50 @@
             <div class="contentContainer">
 
                 <div class="movies">
-                    <div class="movieContainer">
-                        <div class="imgContainer">
-                            <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
-                        </div>
-                        <div class="description">
-                            <div><b>Name:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Duration:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Genre:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Writer:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Producer:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Actors:&nbsp;</b></div>
-                            <ul>
-                                <li>Name</li>
-                                <li>Name</li>
-                                <li>Name</li>
-                                <li>Name</li>
-                            </ul>
-                        </div>
-                        <a href="http://localhost/movie/php/ticketpage/" class="button">
-                            <p>Book ticket</p>
-                        </a>
-                    </div>
-                    <div class="movieContainer">
-                        <div class="imgContainer">
-                            <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
-                        </div>
-                        <div class="description">
-                            <div><b>Name:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Duration:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Genre:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Writer:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Producer:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Actors:&nbsp;</b></div>
-                            <ul>
-                                <li>Name</li>
-                                <li>Name</li>
-                                <li>Name</li>
-                                <li>Name</li>
-                            </ul>
-                        </div>
-                        <a href="" class="button">
-                            <p>Book ticket</p>
-                        </a>
-                    </div>
-                    <div class="movieContainer">
-                        <div class="imgContainer">
-                            <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
-                        </div>
-                        <div class="description">
-                            <div><b>Name:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Duration:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Genre:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Writer:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Producer:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Actors:&nbsp;</b></div>
-                            <ul>
-                                <li>Name</li>
-                                <li>Name</li>
-                                <li>Name</li>
-                                <li>Name</li>
-                            </ul>
-                        </div>
-                        <a href="" class="button">
-                            <p>Book ticket</p>
-                        </a>
-                    </div>
-                    <div class="movieContainer">
-                        <div class="imgContainer">
-                            <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
-                        </div>
-                        <div class="description">
-                            <div><b>Name:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Duration:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Genre:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Writer:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Producer:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Actors:&nbsp;</b></div>
-                            <ul>
-                                <li>Name</li>
-                                <li>Name</li>
-                                <li>Name</li>
-                                <li>Name</li>
-                            </ul>
-                        </div>
-                        <a href="" class="button">
-                            <p>Book ticket</p>
-                        </a>
-                    </div>
-                    <div class="movieContainer">
-                        <div class="imgContainer">
-                            <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
-                        </div>
-                        <div class="description">
-                            <div><b>Name:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Duration:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Genre:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Writer:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Producer:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Actors:&nbsp;</b></div>
-                            <ul>
-                                <li>Name</li>
-                                <li>Name</li>
-                                <li>Name</li>
-                                <li>Name</li>
-                            </ul>
-                        </div>
-                        <a href="" class="button">
-                            <p>Book ticket</p>
-                        </a>
-                    </div>
-                    <div class="movieContainer">
-                        <div class="imgContainer">
-                            <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
-                        </div>
-                        <div class="description">
-                            <div><b>Name:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Duration:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Genre:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Writer:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Producer:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Actors:&nbsp;</b></div>
-                            <ul>
-                                <li>Name</li>
-                                <li>Name</li>
-                                <li>Name</li>
-                                <li>Name</li>
-                            </ul>
-                        </div>
-                        <a href="" class="button">
-                            <p>Book ticket</p>
-                        </a>
-                    </div>
-                    <div class="movieContainer">
-                        <div class="imgContainer">
-                            <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
-                        </div>
-                        <div class="description">
-                            <div><b>Name:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Duration:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Genre:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Writer:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Producer:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Actors:&nbsp;</b></div>
-                            <ul>
-                                <li>Name</li>
-                                <li>Name</li>
-                                <li>Name</li>
-                                <li>Name</li>
-                            </ul>
-                        </div>
-                        <a href="" class="button">
-                            <p>Book ticket</p>
-                        </a>
-                    </div>
-                    <div class="movieContainer">
-                        <div class="imgContainer">
-                            <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
-                        </div>
-                        <div class="description">
-                            <div><b>Name:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Duration:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Genre:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Writer:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Producer:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Actors:&nbsp;</b></div>
-                            <ul>
-                                <li>Name</li>
-                                <li>Name</li>
-                                <li>Name</li>
-                                <li>Name</li>
-                            </ul>
-                        </div>
-                        <a href="" class="button">
-                            <p>Book ticket</p>
-                        </a>
-                    </div>
-                    <div class="movieContainer">
-                        <div class="imgContainer">
-                            <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
-                        </div>
-                        <div class="description">
-                            <div><b>Name:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Duration:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Genre:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Writer:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Producer:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Actors:&nbsp;</b></div>
-                            <ul>
-                                <li>Name</li>
-                                <li>Name</li>
-                                <li>Name</li>
-                                <li>Name</li>
-                            </ul>
-                        </div>
-                        <a href="" class="button">
-                            <p>Book ticket</p>
-                        </a>
-                    </div>
-                    <div class="movieContainer">
-                        <div class="imgContainer">
-                            <img src="http://www.alemcinema.com/storage/app/uploads/public/653/529/41d/thumb_317_400_0_0_0_auto.jpg" alt="img" height="300">
-                        </div>
-                        <div class="description">
-                            <div><b>Name:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Duration:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Genre:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Writer:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Producer:&nbsp;</b>
-                                <p>data</p>
-                            </div>
-                            <div><b>Actors:&nbsp;</b></div>
-                            <ul>
-                                <li>Name</li>
-                                <li>Name</li>
-                                <li>Name</li>
-                                <li>Name</li>
-                            </ul>
-                        </div>
-                        <a href="" class="button">
-                            <p>Book ticket</p>
-                        </a>
-                    </div>
-
+                    <?php 
+                        while ($mData = mysqli_fetch_assoc($mResult)){
+                            printf('
+                                <div class="movieContainer">
+                                    <div class="imgContainer">
+                                        <img src="../../public/img/MP/%s" alt="img" height="300"  width="240">
+                                    </div>
+                                    <div class="description">
+                                        <div><b>Name:&nbsp;</b>
+                                            <p>%s</p>
+                                        </div>
+                                        <div><b>Duration:&nbsp;</b>
+                                            <p>%s</p>
+                                        </div>
+                                        <div><b>Genre:&nbsp;</b>
+                                            <p>%s</p>
+                                        </div>
+                                        <div><b>Writer:&nbsp;</b>
+                                            <p>%s</p>
+                                        </div>
+                                        <div><b>Producer:&nbsp;</b>
+                                            <p>%s</p>
+                                        </div>
+                                        <div><b>Actors:&nbsp;</b></div>
+                                        
+                            
+                            ',$mData['M_imageData'], $mData['M_name'], $mData['M_duration'], $mData['M_genre'], $mData['M_writer'], $mData['M_Producer']);
+                            $actors = explode(",", $mData['M_actors']);
+                            echo '<ul>';
+                            for ($i=0; $i < sizeof($actors); $i++) { 
+                                printf('
+                                        <li>%s</li>
+                                ',$actors[$i]);
+                            }
+                            printf("
+                                    </ul>
+                                        </div>
+                                        <a href='http://localhost/movie/php/ticketpage?id=".$mData['M_id']."' class='button'>
+                                            <p>Book ticket</p>
+                                        </a>
+                                    </div>
+                                ");
+                        }
+                    ?>
                 </div>
             </div>
             <div>
@@ -402,52 +145,31 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><a href="#" onclick="showDetailsA('Movie A')">Movie A</a></td>
-                                <td>2023-01-01</td>
-                                <td>12:00 PM, 3:00 PM, 6:00 PM</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#" onclick="showDetailsB('Movie B')">Movie B</a></td>
-                                <td>2023-01-02</td>
-                                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#" onclick="showDetailsC('Movie C')">Movie C</a></td>
-                                <td>2023-01-03</td>
-                                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#" onclick="showDetailsD('Movie D')">Movie D</a></td>
-                                <td>2023-01-04</td>
-                                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#" onclick="showDetailsE('Movie E')">Movie E</a></td>
-                                <td>2023-01-04</td>
-                                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#" onclick="showDetailsE('Movie F')">Movie F</a></td>
-                                <td>2023-01-04</td>
-                                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#" onclick="showDetailsE('Movie G')">Movie G</a></td>
-                                <td>2023-01-04</td>
-                                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#" onclick="showDetailsE('Movie H')">Movie H</a></td>
-                                <td>2023-01-04</td>
-                                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
-                            </tr>
-                            <tr>
-                                <td><a href="#" onclick="showDetailsE('Movie I')">Movie I</a></td>
-                                <td>2023-01-04</td>
-                                <td>2:00 PM, 5:00 PM, 8:00 PM</td>
-                            </tr>
-                            <!-- Add more rows as needed -->
+                            <?php 
+                                $sQuery = "SELECT 
+                                            `schedule`.`SC_id`,
+                                            `schedule`.`SC_date`,
+                                            `schedule`.`SC_time`,
+                                            `movies`.`M_name`
+                                            FROM
+                                                schedule
+                                            JOIN
+                                                movies ON `movies`.`M_id` = `schedule`.`M_id`
+                                            ORDER by
+                                                M_name
+                                            ";
+                                $sResult = mysqli_query($conn, $sQuery);
+                                while ($sData = mysqli_fetch_assoc($sResult)) {
+                                    printf('
+                                    <tr>
+                                        <td>%s</td>
+                                        <td>%s</td>
+                                        <td>%s</td>
+                                    </tr>
+                                    ', $sData['M_name'], $sData['SC_date'], $sData['SC_time']);
+                                }
+                            
+                            ?>
                         </tbody>
                     </table>
                 </div>

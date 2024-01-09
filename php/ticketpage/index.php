@@ -1,3 +1,12 @@
+<?php 
+  
+  include '../../config/config.php';
+  session_start();
+  $Q_Str = parse_str($_SERVER['QUERY_STRING'], $parameters);
+  $param = isset($parameters['id'])?$parameters['id']:null;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +14,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alem | Ticket Booking</title>
-  <link rel="stylesheet" href="../../public/css/ticketpage/ticket.css" />
+  <link rel="stylesheet" href="../../public/css/ticketpage/ticket.css?v=<?php echo time() ?>" />
 </head>
 
 <body>
@@ -71,31 +80,95 @@
       </div>
     </div>
     <div class="movie-details">
-      <img src="../../public/img/movie.jpg" alt="Main Image" class="main-image" />
-      <div class="side-content">
-        <h1>Demon slayer</h1>
-        <p><b>Duration :</b> Data</p>
-        <p><b>Genre :</b> Data</p>
-        <p><b>Writer:</b> Data</p>
-        <p><b>Producer :</b> Data</p>
+      <?php 
+      
+        $dQuery = "SELECT * FROM `movies` WHERE M_id = $param";
+        $dResult = mysqli_query($conn, $dQuery);
+        while($dData = mysqli_fetch_assoc($dResult)){
+          printf('
+            <div class="det">
+              <img src="../../public/img/MP/%s" alt="Main Image" class="main-image"/>  
+              <div class="side-content">
+                <h1>%s</h1>
+                <p><b>Duration :</b> %s</p>
+                <p><b>Genre :</b> %s</p>
+                <p><b>Writer:</b> %s</p>
+                <p><b>Producer :</b> %s</p>
+                <textarea cols="30" rows="5" readonly>%s</textarea>
+              </div>
+            </div>
+          ', $dData['M_imageData'], $dData['M_name'], $dData['M_duration'], $dData['M_genre'], $dData['M_writer'], $dData['M_Producer'], $dData['M_description']);
+        }
+      ?>
+      <div class="tek">
+        <form action="" method="post">
+            <div class="row">
+              <div>
+                <label for="">schedule</label>
+                <select name="schedule" id="schedule">
+                    <?php 
+                      $scQuery = "SELECT SC_time, SC_date, SC_id FROM `schedule` WHERE M_id = $param";
+                      $scResult = mysqli_query($conn, $scQuery);
+                      while($scData = mysqli_fetch_assoc($scResult)){
+                        printf('
+                              <option value="%s">%s</option>
+                        ', $scData['SC_id'], $scData['SC_date']."--".$scData['SC_time']);
+                      }
+                    ?>
+                </select>
+              </div>
+              <div class="row">
+                <div>
+                <label for="">Number of ticket</label>
+                <input type="number" id="ticketNum" value=1 name="ticketNum" min=1 max=6>
+              </div>
+              </div>
+          </div>
+          <input type=number name="hiddenP" id="hiddenP" hidden>
+          <div class="row">
+            <div>
+              <label for="">Seat Type</label>
+              <select name="" id="type">
+                <option value="vip">vip</option>
+                <option value="eco">eco</option>
+              </select>
+            </div>
+          </div>
+          <div id="inputC">
+          </div>
+          <button id="confirm">Buy</button>
+          <div class="payBG" id="payBG">
+          <div class="fe">
+            <div>
+              <div>
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234567890123456" required>
+              </div>
+              <div>
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123" required>
+              </div>
+            </div>
 
-        <div class="seat-selection">
-          <select>
-            <option value="seat1">Seat 1</option>
-            <option value="seat2">Seat 2</option>
-            <option value="seat3">Seat 3</option>
-            <option value="seat4">Seat 4</option>
-            <option value="seat5">Seat 5</option>
-            <!-- Add more seat options as needed -->
-          </select>
-          <button class="buy-ticket-btn">Buy Ticket</button>
+            <label for="expiryDate">Number of Tickets</label>
+            <input type="number" id="RTname" name="tNumber" readonly>
+
+
+            <label for="amount">Amount:</label>
+            <input type="text" id="amount" name="amount" readonly>
+
+            <div>
+              <button type="submit" name="sub" class="sub">Submit Payment</button>
+              <button type="button" id="can" class="can">Cancel</button>
+            </div>
+          </div>
         </div>
+        </form>
       </div>
-      <img src="../../public/img/movie2.png" alt="Second Image" class="second-image" />
-      <a href="https://www.youtube.com/watch?v=t6MXHczeEqc&ab_channel=CrunchyrollCollection" class="trailer-link">Watch Trailer</a>
     </div>
+    
   </section>
-
+  
   <footer>
     <div class="contact-section">Contact: contact@example.com</div>
     <div class="logo-section">
@@ -108,9 +181,40 @@
       <!-- Add more social icons as needed -->
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../../public/js/ticketPage/ticket.js?v=<?php echo time() ?>"></script>
+  <?php 
+    if(isset($_POST['sub'])){
+      $unQuery = "SELECT U_UserName FROM `users` WHERE U_id = ".$_SESSION['id'];
+      $unResult = mysqli_query($conn, $unQuery);
+      $unData = mysqli_fetch_assoc($unResult);
+      $seat = array();
+      $price = isset($_POST['hiddenP'])?mysqli_real_escape_string($conn, $_POST['hiddenP']):null;
+      $schedule = isset($_POST['schedule'])?mysqli_real_escape_string($conn, $_POST['schedule']):null;
+      $tickNum = isset($_POST['ticketNum'])?mysqli_real_escape_string($conn, $_POST['ticketNum']):null;
+      $cardNumber = isset($_POST['cardNumber'])?mysqli_real_escape_string($conn, $_POST['cardNumber']):null;
+      $cvv = isset($_POST['cvv'])?mysqli_real_escape_string($conn, $_POST['cvv']):null;
+      $CARDpattern = '/^\d{16}$/';
+      $CVVpattern = '/^\d{3,4}$/';
+      if(preg_match_all($CARDpattern, $cardNumber)){
+        if(preg_match_all($CVVpattern, $cvv)){
+          for ($i=0; $i < $tickNum; $i++) {
+            $reQuery = "INSERT INTO `reserve`(U_UserName, S_id, T_price, SC_id)
+                        VALUES('".$unData['U_UserName']."', ".$_POST["seat"."".$i.""].", $price, $schedule)
+            ";
+            mysqli_query($conn, $reQuery);
+          }
+          echo "<script>alert('your tickets have been purchased successfully and thank you for choosing ALEM CINEMA.')</script>";
+        }else{
+          echo '<script>alert("Invalid CVV")</script>';
+        }
+      }else{
+        echo '<script>alert("Invalid Card Number")</script>';
+      }
 
-  <script src="../../public/js/ticketPage/ticket.js">
-  </script>
+    }
+  
+  ?>
 </body>
 
 </html>
