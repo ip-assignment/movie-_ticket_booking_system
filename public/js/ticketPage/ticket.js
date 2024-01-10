@@ -53,6 +53,10 @@ function genInput(num){
   
 }
 
+const at = {
+  name:"asdf"
+}
+
 function populateOptions(){
   console.log(schedule.value, type.value)
   axios.post("http://localhost/movie/util/output.php",{
@@ -66,6 +70,7 @@ function populateOptions(){
     const data = Data.data
     price = parseInt(data[0]["S_price"]);
     hiddenP.value = price
+    console.log(seat)
     for (let index = 0; index < seat.length; index++) {
       var html = ""
       const element = seat[index];

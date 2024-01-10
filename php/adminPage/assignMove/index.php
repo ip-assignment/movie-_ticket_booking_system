@@ -292,6 +292,9 @@
 
         ";
         mysqli_query($conn, $uQuery);
+        if(mysqli_affected_rows($conn) <= 0){
+            echo "<script>alert('schedule overlap')</script>";
+        }
     }
 
 

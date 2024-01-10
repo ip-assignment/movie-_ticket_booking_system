@@ -49,7 +49,7 @@
                     if($data = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                         $_SESSION['state'] = $data['U_state'];
                         $_SESSION['id'] = $data['U_id'];
-                        if($data['U_state']){
+                        if($data['U_state'] == 'admin'){
                             header("Location: http://localhost/movie/php/adminPage", true);
                             exit();
                         }else{
