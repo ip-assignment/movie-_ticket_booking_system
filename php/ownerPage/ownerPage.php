@@ -1,3 +1,23 @@
+<?php
+include '../../../config/config.php';
+session_start();
+if (isset($_SESSION['state'])) {
+  if ($_SESSION['state'] == 'user') {
+    header('Location: http://localhost/movie/php/userPage', true);
+    exit();
+  }
+} else {
+  header('Location: http://localhost/movie/php', true);
+  exit();
+}
+$Oquery = "SELECT * FROM reserve r
+JOIN schedule s ON r.SC_id = s.SC_id
+JOIN movies m ON s.M_id = m.M_id
+JOIN seatas st ON r.S_id = st.S_id";
+
+$Oresult = mysqli_query($conn, $Oquery);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,21 +75,22 @@
     </div>
     <h2>Booking Reports</h2>
     <div class="booking-reports">
-      <!-- Sample Booking Report (replace with dynamic content) -->
-      <h3>Cinema A</h3>
-      <div class="booking-report">
-        <h3>Movie: Demon Slayer</h3>
-        <p>Date: 2023-12-15</p>
-        <p>Time: 18:30</p>
-        <p>Booked Seats: Seat 1, Seat 2, Seat 3</p>
-      </div>
-      <h3>Cinema B</h3>
-      <div class="booking-report">
-        <h3>Movie: Attack on Titan</h3>
-        <p>Date: 2023-04-20</p>
-        <p>Time: 19:30</p>
-        <p>Booked Seats: Seat 4, Seat 5, Seat 6</p>
-      </div>
+      <?php
+      if ($Oresult->num_rows > 0) {
+        while ($row = mysqli_fetch_assoc($Oresult)) {
+          echo '<div class="booking-report">';
+          echo '<h3>Movie: ' . $row["M_name"] . '</h3>';
+          echo '<p>Date: ' . $row["SC_date"] . '</p>';
+          echo '<p>Time: ' . $row["SC_time"] . '</p>';
+          echo '<p>User: ' . $row["U_UserName"] . '</p>';
+          echo '<p>Seat: ' . $row["S_name"] . '</p>';
+          echo '<p>Total Price: ' . $row["T_price"] . '</p>';
+          echo '</div>';
+        }
+      } else {
+        echo '<p>No booking reports available.</p>';
+      }
+      ?>
     </div>
   </section>
   <footer>
