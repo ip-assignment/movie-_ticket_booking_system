@@ -17,7 +17,7 @@ function getSeat() {
     $data = mysqli_fetch_assoc($result);
 
     $rQuery = "SELECT * FROM `seatas` WHERE R_id = '".$data['R_id']."' AND S_type = '$type' AND (
-        SELECT COUNT(*) FROM `reserve` WHERE `reserve`.S_id = `seatas`.S_id
+        SELECT COUNT(*) FROM `reserve` WHERE `reserve`.S_id = `seatas`.S_id AND `reserve`.SC_id = $id
     ) <= 0";
     $rResult = mysqli_query($conn, $rQuery);
 

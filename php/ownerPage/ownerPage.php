@@ -1,11 +1,20 @@
 <?php
-include '../../../config/config.php';
+include '../../config/config.php';
 session_start();
 if (isset($_SESSION['state'])) {
-  if ($_SESSION['state'] == 'user') {
+  if ($_SESSION['state'] == 'admin') {
+    header('Location: http://localhost/movie/php/adminPage', true);
+    exit();
+  }
+  if($_SESSION['state'] == 'user'){
     header('Location: http://localhost/movie/php/userPage', true);
     exit();
   }
+  if($_SESSION['state'] == 'receptionist'){
+    header('Location: http://localhost/movie/php/receptionist/', true);
+    exit();
+  }
+
 } else {
   header('Location: http://localhost/movie/php', true);
   exit();
@@ -58,7 +67,7 @@ $Oresult = mysqli_query($conn, $Oquery);
             <p>Contact</p>
           </a>
           <hr>
-          <a href="#">
+          <a href="http://localhost/movie/php/logout.php">
             <p>Logout</p>
           </a>
           <hr>

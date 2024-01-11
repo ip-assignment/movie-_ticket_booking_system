@@ -6,6 +6,11 @@
             header('Location: http://localhost/movie/php/userPage', true);
             exit();
         }
+        if($_SESSION['state'] == 'receptionist'){
+            header('Location: http://localhost/movie/php/receptionist/', true);
+            exit();
+        }
+
     }else{
         header('Location: http://localhost/movie/php', true);
         exit();

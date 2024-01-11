@@ -7,6 +7,11 @@
             header('Location: http://localhost/movie/php/userPage', true);
             exit();
         }
+        if($_SESSION['state'] == 'receptionist'){
+            header('Location: http://localhost/movie/php/receptionist/', true);
+            exit();
+        }
+
     }else{
         header('Location: http://localhost/movie/php', true);
         exit();
@@ -14,19 +19,19 @@
     $eData = null;
     if(isset($_POST['eSearch'])){
         $eId = isset($_POST['search'])?mysqli_real_escape_string($conn, $_POST['search']):null;
-        $query = "SELECT * FROM `users` where U_id = ".$eId." AND (`U_state` = 'admin' OR `U_state` = 'owner')";
+        $query = "SELECT * FROM `users` where U_id = ".$eId." AND (`U_state` = 'admin' OR `U_state` = 'owner' OR `U_state` = 'receptionist')";
         $eResult = mysqli_query($conn, $query);
         $eData = mysqli_fetch_array($eResult, MYSQLI_ASSOC);
         if(!$eData){
             echo "<script>alert('no user white that id')</script>";
         } 
     }
-    $disQuery = "SELECT * from `users` WHERE (`U_state` = 'admin' OR `U_state` = 'owner')";
+    $disQuery = "SELECT * from `users` WHERE (`U_state` = 'admin' OR `U_state` = 'owner' OR `U_state` = 'receptionist')";
     $disResult = mysqli_query($conn, $disQuery);
     
     $Did = isset($_POST['did'])?mysqli_real_escape_string($conn, $_POST['did']):null;
     if($Did){
-        $dQuery = "SELECT * FROM `users` WHERE U_id = ".$Did." AND (`U_state` = 'admin' OR `U_state` = 'owner')";
+        $dQuery = "SELECT * FROM `users` WHERE U_id = ".$Did." AND (`U_state` = 'admin' OR `U_state` = 'owner' OR `U_state` = 'receptionist')";
         $dResult = mysqli_query($conn, $dQuery);
         if($dResult){
             $disData = mysqli_fetch_all($dResult, MYSQLI_ASSOC);
@@ -113,6 +118,7 @@
                             <select name="status" id="">
                                 <option value="admin">Admin</option>
                                 <option value="owner">Owner</option>
+                                <option value="receptionist">receptionist</option>
                             </select>
                         </div>
                         <div class="inputCon">
@@ -180,6 +186,7 @@
                                 <select name="status" id="">
                                     <option <?php echo $eData?($eData['U_state'] == 'admin'?'selected':''):'' ?> value="admin">Admin</option>
                                     <option <?php echo $eData?($eData['U_state'] == 'owner'?'selected':''):'' ?> value="owner">Owner</option>
+                                    <option <?php echo $eData?($eData['U_state'] == 'receptionist'?'selected':''):'' ?> value="receptionist">receptionist</option>
                                 </select>
                             </div>
                             <div class="inputCon">
@@ -255,24 +262,42 @@
         $status = isset($_POST['status'])?mysqli_real_escape_string($conn, trim($_POST['status'])):null;
         $password = isset($_POST['password'])?mysqli_real_escape_string($conn, trim($_POST['password'])):null;
         $conPassword = isset($_POST['conPassword'])?mysqli_real_escape_string($conn, trim($_POST['conPassword'])):null;
-    
-        if($password == $conPassword && $password && $conPassword){
-            $query = "
-                        INSERT IGNORE INTO `users` (`U_FirstName`, `U_LastName`, `U_UserName`, `U_Email`, `U_Gender`, `U_password`, `U_state`)
-                        VALUES ('$firstName', '$lastName', '$userName', '$email', '$gender', '$password','$status')
-                    ";
-            $result = mysqli_query($conn, $query);
-    
-            if ($result) {
-                if (mysqli_affected_rows($conn) <= 0) {
-                   echo "<script>alert('Username already exists. Please choose a different username.')</script>";
-                }    
-            } else {
-                echo "<script>alert('Something went wrong, please try again later.')</script>";
+        if (preg_match('/^[a-zA-Z]{6,}$/', $firstName)) {
+            echo "asdf";
+            if (preg_match('/^[a-zA-Z]{6,}$/', $lastName)) {
+                if (preg_match('/^[a-zA-Z0-9._%+-]{5,}$/', $userName)) {
+                    if (preg_match('/^(?=.*[a-z])(?=.*[A-Z]).{8,}$/', $password)) {
+                        if($password == $conPassword && $password && $conPassword){
+                            $query = "
+                                        INSERT IGNORE INTO `users` (`U_FirstName`, `U_LastName`, `U_UserName`, `U_Email`, `U_Gender`, `U_password`, `U_state`)
+                                        VALUES ('$firstName', '$lastName', '$userName', '$email', '$gender', '$password','$status')
+                                    ";
+                            $result = mysqli_query($conn, $query);
+                    
+                            if ($result) {
+                                if (mysqli_affected_rows($conn) <= 0) {
+                                echo "<script>alert('Username already exists. Please choose a different username.')</script>";
+                                }    
+                            } else {
+                                echo "<script>alert('Something went wrong, please try again later.')</script>";
+                            }
+                        }else{
+                            echo "<script>alert('password does not match')</script>";
+                        }   
+                    }else{
+                        echo '<script>alert("Invalid Password. Password must be at least 8 characters and contain at least one uppercase and one lowercase letter.");</script>';
+                    }
+                }else{
+                    echo '<script>alert("Invalid UserName. Enter a valid username (at least 5 characters, letters, digits, and the following special characters: . _ % + -)");</script>';
+
+                }
+            }else{
+                echo '<script>alert("Invalid Last Name. Enter a valid last name (at least 6 characters, letters only)");</script>';
             }
         }else{
-            echo "<script>alert('password does not match')</script>";
+            echo '<script>alert("Invalid First Name. Enter a valid first name (at least 6 characters, letters only)");</script>';           
         }
+
     }
     if(isset($_POST['edit'])){
         $Did = isset($_POST['Did'])?mysqli_real_escape_string($conn, trim($_POST['Did'])):null;
@@ -284,26 +309,40 @@
         $status = isset($_POST['status'])?mysqli_real_escape_string($conn, trim($_POST['status'])):null;
         $password = isset($_POST['password'])?mysqli_real_escape_string($conn, trim($_POST['password'])):null;
         $conPassword = isset($_POST['conPassword'])?mysqli_real_escape_string($conn, trim($_POST['conPassword'])):null;
-    
-    
-        if($password == $conPassword && $password && $conPassword){
-            $query = "
-                        UPDATE `users`
-                        SET `U_FirstName` = '".$firstName."', `U_LastName`= '".$lastName."', `U_UserName` ='".$userName."', `U_Email` = '".$email."', `U_Gender` = '".$gender."', `U_password` = '".$password."' `U_state` = '".$status."'
-                        WHERE U_id = '".$Did."'
-                        AND (SELECT COUNT(*) FROM `users` WHERE U_UserName = '".$userName."'  AND U_id <> ".$Did.") < 1
-                    ";
-            $result = mysqli_query($conn, $query);
-    
-            if ($result) {
-                if (mysqli_affected_rows($conn) <= 0) {
-                   echo "<script>alert('Username already exists. Please choose a different username.')</script>";
-                }    
-            } else {
-                echo "<script>alert('Something went wrong, please try again later.')</script>";
+        if (preg_match('/^[a-zA-Z]{6,}$/', $firstName)) {
+            if (preg_match('/^[a-zA-Z]{6,}$/', $lastName)) {
+                if (preg_match('/^[a-zA-Z0-9._%+-]{5,}$/', $userName)) {
+                    if (preg_match('/^(?=.*[a-z])(?=.*[A-Z]).{8,}$/', $password)) {
+                        if($password == $conPassword && $password && $conPassword){
+                            $query = "
+                                        UPDATE `users`
+                                        SET `U_FirstName` = '".$firstName."', `U_LastName`= '".$lastName."', `U_UserName` ='".$userName."', `U_Email` = '".$email."', `U_Gender` = '".$gender."', `U_password` = '".$password."', `U_state` = '".$status."'
+                                        WHERE U_id = '".$Did."'
+                                        AND (SELECT COUNT(*) FROM `users` WHERE U_UserName = '".$userName."'  AND U_id <> ".$Did.") < 1
+                                    ";
+                            $result = mysqli_query($conn, $query);
+                    
+                            if ($result) {
+                                if (mysqli_affected_rows($conn) <= 0) {
+                                echo "<script>alert('Username already exists. Please choose a different username.')</script>";
+                                }    
+                            } else {
+                                echo "<script>alert('Something went wrong, please try again later.')</script>";
+                            }
+                        }else{
+                            echo "<script>alert('password does not match')</script>";
+                        }
+                    }else{
+                        echo '<script>alert("Invalid Password. Password must be at least 8 characters and contain at least one uppercase and one lowercase letter.");</script>';
+                    }
+                }else{
+                    echo '<script>alert("Invalid UserName. Enter a valid username (at least 5 characters, letters, digits, and the following special characters: . _ % + -)");</script>';
+                }
+            }else{
+                echo '<script>alert("Invalid Last Name. Enter a valid last name (at least 6 characters, letters only)");</script>';
             }
         }else{
-            echo "<script>alert('password does not match')</script>";
+            echo '<script>alert("Invalid First Name. Enter a valid first name (at least 6 characters, letters only)");</script>';           
         }
     }
 

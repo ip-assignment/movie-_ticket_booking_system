@@ -126,33 +126,6 @@
                                         <li>%s</li>
                                 ',$actors[$i]);
                             }
-                            // $boQuery =  "SELECT *
-                            //                 FROM `schedule`
-                            //                 WHERE M_id = ".$mData['M_id']."
-                            //                 AND NOT EXISTS (
-                            //                     SELECT 1
-                            //                     FROM `seatas`
-                            //                     WHERE `seatas`.R_id = `schedule`.R_id
-                            //                     AND NOT EXISTS (
-                            //                         SELECT 1
-                            //                         FROM `reserve`
-                            //                         WHERE `seatas`.S_id = `reserve`.S_id
-                            //                     )
-                            //                 );";
-
-                            // $boResult = mysqli_query($conn, $boQuery);
-                            // $boData = mysqli_fetch_assoc($boResult);
-                            // print_r($boData);
-                            // if($boData){
-                            //     printf("
-                            //             </ul>
-                            //                 </div>
-                            //                 <a href='#' style='background-color: red; color:white;' class='button'>
-                            //                     <p>Book ticket</p>
-                            //                 </a>
-                            //             </div>
-                            //         ");
-                            // }else{
                                 printf("
                                         </ul>
                                             </div>
@@ -161,7 +134,6 @@
                                             </a>
                                         </div>
                                     ");
-                        //     }
                         }
                     ?>
                 </div>

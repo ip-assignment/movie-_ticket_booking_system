@@ -6,6 +6,11 @@
             header('Location: http://localhost/movie/php/userPage', true);
             exit();
         }
+        if($_SESSION['state'] == 'receptionist'){
+            header('Location: http://localhost/movie/php/receptionist/', true);
+            exit();
+        }
+
     }else{
         header('Location: http://localhost/movie/php', true);
         exit();
@@ -263,7 +268,7 @@
                     WHERE
                         (SELECT COUNT(*)
                         FROM `schedule`
-                        WHERE `SC_date` = '$airDate' AND TIMEDIFF('$ariTime', SC_time) <= '00:20:00') <= 0
+                        WHERE `SC_date` = '$airDate' AND `R_id` = '$room' AND TIMEDIFF('$ariTime', SC_time) <= '00:20:00') <= 0
 
         ";
         mysqli_query($conn, $query);
@@ -288,7 +293,7 @@
                         SC_time = '$ariTime'
                     WHERE SC_id = $Uid AND (SELECT COUNT(*)
                         FROM `schedule`
-                        WHERE `SC_date` = '$airDate' AND TIMEDIFF('$ariTime', SC_time) <= '00:20:00' AND SC_id <> $Uid) <= 0 
+                        WHERE `SC_date` = '$airDate'  AND `R_id` = '$room' AND TIMEDIFF('$ariTime', SC_time) <= '00:20:00' AND SC_id <> $Uid) <= 0 
 
         ";
         mysqli_query($conn, $uQuery);

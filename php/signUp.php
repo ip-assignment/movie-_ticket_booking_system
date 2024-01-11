@@ -1,6 +1,25 @@
 <?php 
     include '../config/config.php';
     session_start();
+    if(isset($_SESSION['state'])){
+        if($_SESSION['state'] == 'user'){
+            header('Location: http://localhost/movie/php/userPage', true);
+            exit();
+        }
+        if ($_SESSION['state'] == 'admin') {
+            header('Location: http://localhost/movie/php/adminPage', true);
+            exit();
+        }
+        if($_SESSION['state'] == 'receptionist'){
+            header('Location: http://localhost/movie/php/receptionist/', true);
+            exit();
+        }
+        if($_SESSION['state'] == 'owner'){
+            header("Location: http://localhost/movie/php/ownerPage/ownerPage.php", true);
+            exit();
+        }
+
+    }
 ?>
 
 <!DOCTYPE html>
