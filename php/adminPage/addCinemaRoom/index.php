@@ -95,21 +95,21 @@
                         <div class="row">
                             <div>
                                 <label for="gender">Number of economy seats:</label>
-                                <input type="number" name="eNumberOfSeats" required>
+                                <input type="number" name="eNumberOfSeats" min = 1 required>
                             </div>
                             <div>
                                 <label for="gender">Price:</label>
-                                <input type="number" name="ePrice" required>
+                                <input type="number" name="ePrice" min = 1 required>
                             </div>
                         </div>
                         <div class="row">
                             <div>
                                 <label for="gender">Number of vip seats:</label>
-                                <input type="number" name="vNumberOfSeats" required>
+                                <input type="number" name="vNumberOfSeats" min = 1 required>
                             </div>
                             <div>
                                 <label for="gender">Price:</label>
-                                <input type="number" name="VPrice" required>
+                                <input type="number" name="VPrice" min = 1 required>
                             </div>
                         </div>
                         <br>
@@ -142,21 +142,21 @@
                         <div class="row">
                             <div>
                                 <label for="gender">Number of economy seats:</label>
-                                <input type="number" name="eNumberOfSeats" value="<?php echo $eCount?$eCount['setCount']:""?>"  required>
+                                <input type="number" name="eNumberOfSeats" min = 1 value="<?php echo $eCount?$eCount['setCount']:""?>"  required>
                             </div>
                             <div>
                                 <label for="gender">Price:</label>
-                                <input type="number" name="ePrice" value="<?php echo $vCount?$eCount['S_price']:""?>" required>
+                                <input type="number" name="ePrice" min = 1 value="<?php echo $vCount?$eCount['S_price']:""?>" required>
                             </div>
                         </div>
                         <div class="row">
                             <div>
                                 <label for="gender">Number of vip seats:</label>
-                                <input type="number" name="vNumberOfSeats" value="<?php echo $vCount?$vCount['setCount']:""?>" required>
+                                <input type="number" name="vNumberOfSeats" min = 1 value="<?php echo $vCount?$vCount['setCount']:""?>" required>
                             </div>
                             <div>
                                 <label for="gender">Price:</label>
-                                <input type="number" name="VPrice" value="<?php echo $vCount?$vCount['S_price']:""?>" required>
+                                <input type="number" name="VPrice" min = 1 value="<?php echo $vCount?$vCount['S_price']:""?>" required>
                             </div>
                         </div>
                         <br>
